@@ -158,8 +158,9 @@
 
   new Swiper('.clients .swiper', {
     loop: true,
-    speed: 800,
+    speed: 900,
     slidesPerView: 2,
+    spaceBetween: 40,
     autoplay: {
       delay: 1000,
       disableOnInteraction: false
@@ -172,10 +173,10 @@
         slidesPerView: 4,
       },
       1200: {
-        slidesPerView: 6,
+        slidesPerView: 5,
       },
       1400: {
-        slidesPerView: 7,
+        slidesPerView: 6,
       }
     }
   });

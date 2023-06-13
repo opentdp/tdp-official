@@ -498,14 +498,13 @@ section {
 --------------------------------------------------------------*/
 .clients {
   background: #f3f9fd;
-  padding: 10px 0;
+  padding: 20px 0;
   text-align: center;
 }
 
 .clients img {
   filter: grayscale(100);
   transition: all 0.4s ease-in-out;
-  padding: 20px;
 }
 
 .clients img:hover {
