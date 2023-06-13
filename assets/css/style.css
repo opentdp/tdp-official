@@ -1426,6 +1426,10 @@ section {
   font-size: 14px;
 }
 
+.contact .info .image {
+  max-width: 60%;
+}
+
 .contact .php-email-form .error-message {
   display: none;
   color: #fff;
