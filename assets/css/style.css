@@ -348,6 +348,8 @@ h6 {
   width: 100%;
   height: 70vh;
   margin-top: 70px;
+  background: url("../img/hero-bg.jpg") top left;
+  background-size: cover;
 }
 
 #hero h1 {
