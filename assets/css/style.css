@@ -505,13 +505,8 @@ section {
 }
 
 .clients img {
-  filter: grayscale(100);
   transition: all 0.4s ease-in-out;
   padding: 0 10px;
-}
-
-.clients img:hover {
-  filter: none;
 }
 
 /*--------------------------------------------------------------
