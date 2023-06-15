@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>博文详情 - OpenTDP</title>
+
+    <meta content="OpenTDP 一个源自于腾讯云开发者先锋（TDP）的自由开源技术组织，致力于探索云端的无限可能" name="description">
+    <meta content="Open,TDP,OpenTDP,TDP-Cloud,TDP-Aiart" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/icon.png" rel="icon">
+    <link href="assets/img/icon.png" rel="apple-touch-icon">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="assets/css/style.css?v0.0.9" rel="stylesheet">
+    <link href="assets/css/blog.css?v0.0.9" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <div class="logo">
+                <a href="/"><img src="assets/img/logo.png" art="OpenTDP" class="img-fluid"></a>
+            </div>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto" href="index.html#hero">首页</a></li>
+                    <li><a class="nav-link scrollto" href="index.html#about">关于</a></li>
+                    <li class="dropdown">
+                        <a><span>开源</span><i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="https://github.com/open-tdp" target="_blank">Github 主页</a></li>
+                            <li class="dropdown">
+                                <a href="#"><span>TDP Cloud</span><i class="bi bi-chevron-right"></i></a>
+                                <ul>
+                                    <li><a href="https://cloud.opentdp.org" target="_blank">演示站</a></li>
+                                    <li><a href="https://github.com/open-tdp/tdp-cloud" target="_blank">源代码</a></li>
+                                    <li><a href="https://docs.opentdp.org/#/cloud/README" target="_blank">在线文档</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#"><span>TDP Aiart</span><i class="bi bi-chevron-right"></i></a>
+                                <ul>
+                                    <li><a href="https://aiart.opentdp.org" target="_blank">演示站</a></li>
+                                    <li><a href="https://github.com/open-tdp/tdp-aiart" target="_blank">源代码</a></li>
+                                    <li><a href="https://docs.opentdp.org/#/aiart/README" target="_blank">在线文档</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a class="nav-link scrollto" href="index.html#services">动态</a></li>
+                    <li><a class="nav-link scrollto" href="index.html#features">推荐</a></li>
+                    <li><a class="nav-link scrollto" href="index.html#team">团队</a></li>
+                    <li><a class="nav-link scrollto" href="index.html#contact">联系</a></li>
+                    <li><a class="nav-link" href="https://docs.opentdp.org" target="_blank">文档</a></li>
+                    <li><a class="getstarted scrollto d-none d-lg-inline" href="index.html#about">启航</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= #main Section ======= -->
+    <main id="main">
+
+        <!-- ======= Breadcrumbs Section ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2>博客</h2>
+                    <ol>
+                        <li><a href="index.html">首页</a></li>
+                        <li>博文详情</li>
+                    </ol>
+                </div>
+
+            </div>
+        </section>
+        <!-- End Breadcrumbs Section -->
+
+        <!-- ======= Blog Details Section ======= -->
+        <section id="blog" class="blog">
+            <div class="container" data-aos="fade-up">
+
+                <div class="row g-5">
+
+                    <div class="col-lg-8">
+
+                        <article class="blog-details">
+
+                            <div class="post-img">
+                                <img src="https://www.rehiy.com/usr/uploads/thumb/24.jpg" alt="" class="img-fluid">
+                            </div>
+
+                            <h2 class="title">为 docker 容器分配宿主局域网IP地址</h2>
+
+                            <div class="meta-top">
+                                <ul>
+                                    <li class="d-flex align-items-center">
+                                        <i class="bi bi-person"></i> <a>若海</a>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="bi bi-clock"></i> <a><time datetime="2020-01-01">2022-12-19</time></a>
+                                    </li>
+                                    <li class="d-flex align-items-center">
+                                        <i class="bi bi-chat-dots"></i> <a class="nav-link scrollto" href="#comments">6 评论</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- End meta top -->
+
+                            <div class="content">
+                                <p>本文旨在说明如何实现docker容器使用宿主机IP段对外提供服务或跨主机互通，若尚未安装docker请移步百度。</p>
+                                <p>文中假设宿主机所在的局域网地址段为 192.168.10.0/24，请根据实际情况进行修改</p>
+                                <h3>创建一个基于macvlan驱动的网络</h3>
+                                <blockquote>
+                                    docker network create --driver macvlan \<br>
+                                    --subnet=192.168.10.0/24 --gateway=192.168.10.1 \<br>
+                                    --opt parent=eth0 mcnet
+                                </blockquote>
+                                <h3>创建一个有固定局域网IP的测试容器</h3>
+                                <blockquote>
+                                    docker run -it --rm --network mcnet --ip 192.168.10.114 alpine
+                                </blockquote>
+                                <img src="https://www.rehiy.com/usr/uploads/thumb/32.jpg" class="img-fluid" alt="">
+                                <h3>多台宿主机的容器互通</h3>
+                                <p>在所有节点重复上述步骤即可，注意不要分配重复的ip地址</p>
+                                <h3>特别说明</h3>
+                                <ul>
+                                    <li>
+                                        若宿主为物理机或<code>esxi</code>，网卡需要开启<code>Trunk</code>或<code>混杂</code>模式才可以透传打了tag的数据包
+                                    </li>
+                                    <li>
+                                        若宿主为<code>hyper-v</code>虚拟机，则需要开启MAC欺骗，参阅 <a href="https://www.rehiy.com/post/434/">https://www.rehiy.com/post/434/</a>
+                                    </li>
+                                    <li>
+                                        若宿主为云服务器，你就不要尝试了，多数vpc都是运行在vxlan里面的，不支持vlan数据
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- End post content -->
+
+                            <div class="meta-bottom">
+                                <i class="bi bi-folder"></i>
+                                <ul class="cats">
+                                    <li><a href="#">码农说码</a></li>
+                                </ul>
+
+                                <i class="bi bi-tags"></i>
+                                <ul class="tags">
+                                    <li><a href="#">docker</a></li>
+                                    <li><a href="#">linux</a></li>
+                                    <li><a href="#">shell</a></li>
+                                </ul>
+                            </div>
+                            <!-- End meta bottom -->
+
+                        </article>
+                        <!-- End blog post -->
+
+                        <div class="post-author d-flex align-items-center">
+                            <img src="https://www.rehiy.com/usr/uploads/rehiy.jpg" class="rounded-circle flex-shrink-0" alt="">
+                            <div>
+                                <h4>若海</h4>
+                                <div class="social-links">
+                                    <a href="https://twitters.com/#"><i class="bi bi-twitter"></i></a>
+                                    <a href="https://facebook.com/#"><i class="bi bi-facebook"></i></a>
+                                    <a href="https://instagram.com/#"><i class="biu bi-instagram"></i></a>
+                                </div>
+                                <p>
+                                    如果您对我们的服务感兴趣，欢迎随时与我们联系。您可以通过电子邮件，电话或社交媒体与我们取得联系。我们的客服团队将竭诚为您服务，为您提供详细的咨询和支持。
+                                </p>
+                            </div>
+                        </div>
+                        <!-- End post author -->
+
+                        <div id="comments" class="comments">
+
+                            <h4 class="comments-count">6 评论</h4>
+
+                            <div id="comment-1" class="comment">
+                                <div class="d-flex">
+                                    <div class="comment-img"><img src="assets/img/blog/author-1.jpg" alt=""></div>
+                                    <div>
+                                        <h5><a href="">鹰瑶</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> 回复</a></h5>
+                                        <time datetime="2020-01-01">2023-06-16</time>
+                                        <p>很久前码的一小段代码，偶然翻出来了。带注释分享一下，仅供大家研究学习，切勿用于其他用途</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End comment #1 -->
+
+                            <div id="comment-2" class="comment">
+                                <div class="d-flex">
+                                    <div class="comment-img"><img src="assets/img/blog/author-2.jpg" alt=""></div>
+                                    <div>
+                                        <h5><a href="">小东</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> 回复</a></h5>
+                                        <time datetime="2020-01-01">2023-06-16</time>
+                                        <p>很久没更新这个系列的文章了，想来按照之前教程部署的集群也都到了该升级的时候，今天我们来探讨下如何升级k3s集群</p>
+                                    </div>
+                                </div>
+
+                                <div id="comment-reply-1" class="comment comment-reply">
+                                    <div class="d-flex">
+                                        <div class="comment-img"><img src="assets/img/blog/author-3.jpg" alt=""></div>
+                                        <div>
+                                            <h5><a href="">荒年</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> 回复</a></h5>
+                                            <time datetime="2020-01-01">2023-06-16</time>
+                                            <p>在和上可以通过删除“设置账户邮件和账户”里的登录账号来达到目的。但是在上尝试了各种删除的办法都是没用</p>
+                                        </div>
+                                    </div>
+
+                                    <div id="comment-reply-2" class="comment comment-reply">
+                                        <div class="d-flex">
+                                            <div class="comment-img"><img src="assets/img/blog/author-4.jpg" alt=""></div>
+                                            <div>
+                                                <h5><a href="">梦屿</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> 回复</a></h5>
+                                                <time datetime="2020-01-01">2023-06-16</time>
+                                                <p>MariaDB 安装时，默认会创建一个特权用户。如果忘记超级管理员可以使用这个账号登录后修改密码或者主机</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- End comment 回复 #2-->
+
+                                </div>
+                                <!-- End comment 回复 #1-->
+
+                            </div>
+                            <!-- End comment #2-->
+
+                            <div id="comment-3" class="comment">
+                                <div class="d-flex">
+                                    <div class="comment-img"><img src="assets/img/blog/author-5.jpg" alt=""></div>
+                                    <div>
+                                        <h5><a href="">蛋黄</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> 回复</a></h5>
+                                        <time datetime="2020-01-01">2023-06-16</time>
+                                        <p>使用Cloudflare部署Ai聊天前端界面，无需置备服务器，只要一个可以接入cloudflare的域名即可</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- End comment #3 -->
+
+                            <div id="comment-4" class="comment">
+                                <div class="d-flex">
+                                    <div class="comment-img"><img src="assets/img/blog/author-6.jpg" alt=""></div>
+                                    <div>
+                                        <h5><a href="">king</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> 回复</a></h5>
+                                        <time datetime="2020-01-01">2023-06-16</time>
+                                        <p>前言 不得不吐槽下，将一个现有域名添加到Cloudflare时，系统自动导入的几百个不那么正确的解析记录，让人抓狂</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- End comment #4 -->
+
+                            <div class="reply-form">
+
+                                <h4>回复题主</h4>
+                                <p>您的电子邮件地址将不会被公布。必填字段已标记 * </p>
+                                <form action="">
+                                    <div class="row">
+                                        <div class="col-md-6 form-group">
+                                            <input name="name" type="text" class="form-control" placeholder="昵称 *" required>
+                                        </div>
+                                        <div class="col-md-6 form-group">
+                                            <input name="email" type="email" class="form-control" placeholder="邮箱 *" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col form-group">
+                                            <input name="website" type="url" class="form-control" placeholder="网址 *" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col form-group">
+                                            <textarea name="comment" class="form-control" placeholder="评论 *" required></textarea>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">提交</button>
+
+                                </form>
+
+                            </div>
+
+                        </div>
+                        <!-- End blog comments -->
+
+                    </div>
+
+                    <div class="col-lg-4">
+
+                        <div class="sidebar">
+
+                            <div class="sidebar-item search-form">
+                                <h3 class="sidebar-title">搜索</h3>
+                                <form action="" class="mt-3">
+                                    <input type="text">
+                                    <button type="submit"><i class="bi bi-search"></i></button>
+                                </form>
+                            </div>
+                            <!-- End sidebar search formn-->
+
+                            <div class="sidebar-item categories">
+                                <h3 class="sidebar-title">分类</h3>
+                                <ul class="mt-3">
+                                    <li><a href="#">码农说码 <span>(25)</span></a></li>
+                                    <li><a href="#">运维自嗨 <span>(12)</span></a></li>
+                                    <li><a href="#">插话四海 <span>(5)</span></a></li>
+                                    <li><a href="#">设计原型 <span>(22)</span></a></li>
+                                    <li><a href="#">时事评论 <span>(8)</span></a></li>
+                                    <li><a href="#">教育视界 <span>(14)</span></a></li>
+                                </ul>
+                            </div>
+                            <!-- End sidebar categories-->
+
+                            <div class="sidebar-item recent-posts">
+                                <h3 class="sidebar-title">近期发布</h3>
+
+                                <div class="mt-3">
+
+                                    <div class="post-item mt-3">
+                                        <img src="https://www.rehiy.com/usr/uploads/thumb/1.jpg" alt="">
+                                        <div>
+                                            <h4><a href="blog-1.html">无服务器部署ChatGPT聊天界面</a></h4>
+                                            <time datetime="2020-01-01">2023-05-28</time>
+                                        </div>
+                                    </div>
+                                    <!-- End recent post item-->
+
+                                    <div class="post-item">
+                                        <img src="https://www.rehiy.com/usr/uploads/thumb/2.jpg" alt="">
+                                        <div>
+                                            <h4><a href="blog-1.html">无服务器实现openai接口反向代理和额度查询</a></h4>
+                                            <time datetime="2020-01-01">2023-05-01</time>
+                                        </div>
+                                    </div>
+                                    <!-- End recent post item-->
+
+                                    <div class="post-item">
+                                        <img src="https://www.rehiy.com/usr/uploads/thumb/3.jpg" alt="">
+                                        <div>
+                                            <h4><a href="blog-1.html">彻底删除微软Edge浏览器登录的Microsoft账号</a></h4>
+                                            <time datetime="2020-01-01">2023-04-27</time>
+                                        </div>
+                                    </div>
+                                    <!-- End recent post item-->
+
+                                    <div class="post-item">
+                                        <img src="https://www.rehiy.com/usr/uploads/thumb/4.jpg" alt="">
+                                        <div>
+                                            <h4><a href="blog-1.html">Kubernetes 领进门 | 实现 k3s 自动更新</a></h4>
+                                            <time datetime="2020-01-01">2023-04-24</time>
+                                        </div>
+                                    </div>
+                                    <!-- End recent post item-->
+
+                                    <div class="post-item">
+                                        <img src="https://www.rehiy.com/usr/uploads/thumb/5.jpg" alt="">
+                                        <div>
+                                            <h4><a href="blog-1.html">代码解析：随机展示 bing 每日一图</a></h4>
+                                            <time datetime="2020-01-01">2023-04-03</time>
+                                        </div>
+                                    </div>
+                                    <!-- End recent post item-->
+
+                                </div>
+
+                            </div>
+                            <!-- End sidebar recent posts-->
+
+                            <div class="sidebar-item tags">
+                                <h3 class="sidebar-title">标签云</h3>
+                                <ul class="mt-3">
+                                    <li><a href="#">App</a></li>
+                                    <li><a href="#">IT</a></li>
+                                    <li><a href="#">Business</a></li>
+                                    <li><a href="#">Mac</a></li>
+                                    <li><a href="#">Design</a></li>
+                                    <li><a href="#">Office</a></li>
+                                    <li><a href="#">Creative</a></li>
+                                    <li><a href="#">Studio</a></li>
+                                    <li><a href="#">Smart</a></li>
+                                    <li><a href="#">Tips</a></li>
+                                    <li><a href="#">Marketing</a></li>
+                                </ul>
+                            </div>
+                            <!-- End sidebar tags-->
+
+                        </div>
+                        <!-- End Blog Sidebar -->
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- End Blog Details Section -->
+
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container">
+
+            <div class="row d-flex align-items-center">
+
+                <div class="col-lg-6 text-lg-start text-center">
+                    <div class="copyright">
+                        &copy; 2022 - 2023 <strong>OpenTDP</strong> Organization. All Rights Reserved
+                    </div>
+                    <div class="credits">
+                        Powered by <a href="https://www.rehiy.com/" target="_blank">Rehiy</a>.
+                        CDN provided by <a href="https://cloud.tencent.com/product/teo" target="_blank">TencnetCloud Edgeone</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <nav class="footer-links text-lg-end text-center pt-lg-0 pt-2">
+                        <a href="index.html" class="scrollto">首页</a>
+                        <a href="index.html#about" class="scrollto">关于</a>
+                        <a href="article-1.html">隐私政策</a>
+                        <a href="#">使用条款</a>
+                    </nav>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+        <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js?v0.0.8"></script>
+
+</body>
+
+</html>
