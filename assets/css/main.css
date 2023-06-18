@@ -741,13 +741,13 @@ section {
 }
 
 /*--------------------------------------------------------------
-# More Services
+# Articles
 --------------------------------------------------------------*/
-.more-services {
+.articles {
     padding-top: 20px;
 }
 
-.more-services .card {
+.articles .card {
     border: 0;
     padding: 160px 20px 20px 20px;
     position: relative;
@@ -757,7 +757,7 @@ section {
     background-position: center center;
 }
 
-.more-services .card-body {
+.articles .card-body {
     z-index: 10;
     background: rgba(255, 255, 255, 0.9);
     padding: 15px 30px;
@@ -767,21 +767,21 @@ section {
     border-radius: 5px;
 }
 
-.more-services .card-title {
+.articles .card-title {
     font-weight: 700;
     text-align: center;
     margin-bottom: 15px;
 }
 
-.more-services .card-title a {
+.articles .card-title a {
     color: #222222;
 }
 
-.more-services .card-text {
+.articles .card-text {
     color: #5e5e5e;
 }
 
-.more-services .read-more a {
+.articles .read-more a {
     color: #777777;
     text-transform: uppercase;
     font-weight: 600;
@@ -789,18 +789,18 @@ section {
     transition: 0.4s;
 }
 
-.more-services .read-more a:hover {
+.articles .read-more a:hover {
     text-decoration: underline;
 }
 
-.more-services .card:hover .card-body {
+.articles .card:hover .card-body {
     background: #3498db;
 }
 
-.more-services .card:hover .read-more a,
-.more-services .card:hover .card-title,
-.more-services .card:hover .card-title a,
-.more-services .card:hover .card-text {
+.articles .card:hover .read-more a,
+.articles .card:hover .card-title,
+.articles .card:hover .card-title a,
+.articles .card:hover .card-text {
     color: #fff;
 }
 
