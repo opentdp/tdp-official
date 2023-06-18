@@ -225,6 +225,12 @@ main {
     visibility: visible;
 }
 
+@media (max-width: 990px) {
+    .navbar .dropdown .dropdown ul {
+        visibility: visible;
+    }
+}
+
 @media (max-width: 1366px) {
     .navbar .dropdown .dropdown ul {
         left: -90%;
