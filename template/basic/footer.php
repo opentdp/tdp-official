@@ -33,13 +33,13 @@
 </a>
 
 <!-- Vendor JS Files -->
-<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-<script src="assets/vendor/aos/aos.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-<script src="assets/vendor/php-email-form/validate.js"></script>
+<?php $this->tpl('assets/vendor/purecounter/purecounter_vanilla.js'); ?>
+<?php $this->tpl('assets/vendor/aos/aos.js'); ?>
+<?php $this->tpl('assets/vendor/bootstrap/js/bootstrap.bundle.min.js'); ?>
+<?php $this->tpl('assets/vendor/glightbox/js/glightbox.min.js'); ?>
+<?php $this->tpl('assets/vendor/isotope-layout/isotope.pkgd.min.js'); ?>
+<?php $this->tpl('assets/vendor/swiper/swiper-bundle.min.js'); ?>
+<?php $this->tpl('assets/vendor/php-email-form/validate.js'); ?>
 
 <!-- Main JS File -->
-<script src="assets/js/main.js"></script>
+<?php $this->tpl('assets/js/main.js'); ?>

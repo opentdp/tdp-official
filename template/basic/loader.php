@@ -1,4 +1,4 @@
-<link href="assets/css/loader.css" rel="stylesheet">
+<?php $this->tpl('assets/css/loader.css'); ?>
 
 <div class="preloader">
     <div class="loader">

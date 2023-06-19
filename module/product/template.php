@@ -3,7 +3,7 @@
 
 <head>
     <?php $this->tpl('basic/header.php'); ?>
-    <link href="assets/css/blog.css" rel="stylesheet">
+    <?php $this->tpl('assets/css/blog.css'); ?>
 </head>
 
 <body>

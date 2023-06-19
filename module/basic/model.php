@@ -8,39 +8,40 @@ class BasicModel
     public $keywords = 'basic';
     public $description = 'basic';
 
-    public $output = [];
+    public $content = [];
 
     public $moddir = 'module/basic/';
     public $tpldir = 'template/';
 
-    public function __construct($act = '')
+    public function __construct($act = null)
     {
         $this->moddir = APP_ROOT . 'module/' . $this->name . '/';
         $this->tpldir = APP_ROOT . 'template/';
         $act && $this->$act();
     }
 
-    public function tpl($name)
+    public function tpl($n)
     {
-        $file = $this->tpldir . $name;
-        if (is_file($file)) {
-            require $file;
+        $ext = pathinfo($n, PATHINFO_EXTENSION);
+        if ($ext == 'php') {
+            require $this->tpldir . $n;
+        } elseif ($ext == 'css') {
+            echo '<link href="' . $n . '" rel="stylesheet">';
+        } elseif ($ext == 'js') {
+            echo '<script src="' . $n . '"></script>';
+        } else {
+            echo '<!--not found ' . $n . '-->';
         }
-    }
-
-    public function json($data)
-    {
-        header('Content-Type: application/json; charset=utf-8');
-        echo json_encode($data, 320);
     }
 
     public function output()
     {
         $accept = $_SERVER['HTTP_ACCEPT'] ?? '';
-        if (stripos($accept, 'application/json') === false) {
-            require $this->moddir . 'template.php';
+        if (stripos($accept, 'application/json') !== false) {
+            header('Content-Type: application/json; charset=utf-8');
+            echo json_encode($this->content, 320);
         } else {
-            $this->json();
+            require $this->moddir . 'template.php';
         }
         exit;
     }
