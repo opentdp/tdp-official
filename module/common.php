@@ -1,5 +1,10 @@
 <?php
 
+define('APP_DATASET', APP_ROOT . 'dataset/');
+define('APP_LIBRARY', APP_ROOT . 'library/');
+define('APP_MODULE', APP_ROOT . 'module/');
+define('APP_TEMPLATE',  APP_ROOT . 'template/');
+
 /*
  * 初始化模块
  */

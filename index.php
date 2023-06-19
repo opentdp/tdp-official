@@ -1,12 +1,11 @@
 <?php
 
+// 载入公共库
+
 define('APP_ROOT', strtr(__DIR__, '\\', '/') . '/');
 require APP_ROOT . 'module/common.php';
 
-// 验证模块
+// 加载请求模块
 
-$mod = $_GET['mod'] ?? 'home';
-
-// 加载模块
-
-newModel($mod)->output();
+$model = newModel($_GET['mod'] ?? 'home');
+$model->output();

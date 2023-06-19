@@ -8,15 +8,10 @@ class BasicModel
     public $keywords = 'basic';
     public $description = 'basic';
 
-    public $content = [];
-
-    public $moddir = 'module/basic/';
-    public $tpldir = 'template/';
+    public $object = null;
 
     public function __construct($act = null)
     {
-        $this->moddir = APP_ROOT . 'module/' . $this->name . '/';
-        $this->tpldir = APP_ROOT . 'template/';
         $act && $this->$act();
     }
 
@@ -24,7 +19,7 @@ class BasicModel
     {
         $ext = pathinfo($n, PATHINFO_EXTENSION);
         if ($ext == 'php') {
-            require $this->tpldir . $n;
+            require APP_TEMPLATE . $n;
         } elseif ($ext == 'css') {
             echo '<link href="' . $n . '" rel="stylesheet">';
         } elseif ($ext == 'js') {
@@ -39,9 +34,9 @@ class BasicModel
         $accept = $_SERVER['HTTP_ACCEPT'] ?? '';
         if (stripos($accept, 'application/json') !== false) {
             header('Content-Type: application/json; charset=utf-8');
-            echo json_encode($this->content, 320);
+            echo json_encode($this->object, 320);
         } else {
-            require $this->moddir . 'template.php';
+            require APP_MODULE . $this->name . '/template.php';
         }
         exit;
     }
