@@ -1,6 +1,6 @@
 <?php
 
-class ContactModel extends BasicModel
+class ContactModel extends ModelBasic
 {
     public $name = 'contact';
 

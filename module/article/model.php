@@ -1,6 +1,6 @@
 <?php
 
-class ArticleModel extends BasicModel
+class ArticleModel extends ModelBasic
 {
     public $name = 'article';
 

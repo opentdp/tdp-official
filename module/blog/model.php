@@ -1,6 +1,6 @@
 <?php
 
-class BlogModel extends BasicModel
+class BlogModel extends ModelBasic
 {
     public $name = 'blog';
 }

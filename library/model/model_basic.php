@@ -1,6 +1,6 @@
 <?php
 
-class BasicModel
+class ModelBasic
 {
     public $name = 'basic';
 
