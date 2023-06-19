@@ -10,22 +10,46 @@ class BasicModel
 
     public $object = null;
 
+    public $parsedown = null;
+
     public function __construct($act = null)
     {
         $act && $this->$act();
     }
 
-    public function tpl($n)
+    public function md($id)
     {
-        $ext = pathinfo($n, PATHINFO_EXTENSION);
+        $file = APP_DATASET . $this->name . '/' . $id . '.md';
+        if (!is_file($file)) {
+            return (object)['content' => 'not found'];
+        }
+        if ($this->parsedown == null) {
+            $this->parsedown = new ParsedownExtraToc();
+        }
+        $text = file_get_contents($file);
+        $data = [
+            'content' => $this->parsedown->text($text),
+        ];
+        if (preg_match('^#(.+)[\r\n]+/', $text, $subject)) {
+            $data['subject'] = $subject[1];
+        }
+        if (preg_match_all('/\[\/\/\]: #(\w+) \((.+)\)/', $text, $prop)) {
+            $data += array_combine($prop[1], $prop[2]);
+        }
+        return (object)$data;
+    }
+
+    public function tpl($id)
+    {
+        $ext = pathinfo($id, PATHINFO_EXTENSION);
         if ($ext == 'php') {
-            require APP_TEMPLATE . $n;
+            require APP_TEMPLATE . $id;
         } elseif ($ext == 'css') {
-            echo '<link href="' . $n . '" rel="stylesheet">';
+            echo '<link href="' . $id . '" rel="stylesheet">';
         } elseif ($ext == 'js') {
-            echo '<script src="' . $n . '"></script>';
+            echo '<script src="' . $id . '"></script>';
         } else {
-            echo '<!--not found ' . $n . '-->';
+            echo '<!--not found ' . $id . '-->';
         }
     }
 
