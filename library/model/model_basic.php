@@ -30,7 +30,7 @@ class ModelBasic
         $data = [
             'content' => $this->parsedown->text($text),
         ];
-        if (preg_match('^#(.+)[\r\n]+/', $text, $subject)) {
+        if (preg_match('/^#(.+)[\r\n]+/', $text, $subject)) {
             $data['subject'] = $subject[1];
         }
         if (preg_match_all('/\[\/\/\]: #(\w+) \((.+)\)/', $text, $prop)) {
