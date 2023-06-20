@@ -33,15 +33,19 @@ class BasicModel
 
     public function tpl($id)
     {
-        $ext = pathinfo($id, PATHINFO_EXTENSION);
-        if ($ext == 'php') {
-            require APP_TEMPLATE . $id;
-        } elseif ($ext == 'css') {
-            echo '<link href="' . $id . '" rel="stylesheet">';
-        } elseif ($ext == 'js') {
-            echo '<script src="' . $id . '"></script>';
-        } else {
-            echo '<!--not found ' . $id . '-->';
+        switch (pathinfo($id, PATHINFO_EXTENSION)) {
+            case 'php':
+                require APP_TEMPLATE . $id;
+                break;
+            case 'css':
+                echo '<link href="' . $id . '" rel="stylesheet">';
+                break;
+            case  'js':
+                echo '<script src="' . $id . '"></script>';
+                break;
+            default:
+                echo '<!--not support ' . $id . '-->';
+                break;
         }
     }
 
