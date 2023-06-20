@@ -1,42 +1,34 @@
 <?php
 
-class ModelBasic
+class BasicModel
 {
     public $name = 'basic';
 
-    public $title = 'basic';
-    public $keywords = 'basic';
-    public $description = 'basic';
+    public $title = '';
+    public $keywords = '';
+    public $description = '';
 
     public $object = null;
 
-    public $parsedown = null;
-
-    public function __construct($act = null)
-    {
-        $act && $this->$act();
-    }
-
     public function md($id)
     {
+        $data = new stdClass();
         $file = APP_DATASET . $this->name . '/' . $id . '.md';
         if (!is_file($file)) {
-            return (object)['content' => 'not found'];
-        }
-        if ($this->parsedown == null) {
-            $this->parsedown = new ParsedownExtraToc();
+            $data->content = 'not found';
+            return $data;
         }
         $text = file_get_contents($file);
-        $data = [
-            'content' => $this->parsedown->text($text),
-        ];
+        $data->content = obtain('ParsedownExtraToc')->text($text);
         if (preg_match('/^#(.+)[\r\n]+/', $text, $subject)) {
-            $data['subject'] = $subject[1];
+            $data->subject = $subject[1];
         }
         if (preg_match_all('/\[\/\/\]: #(\w+) \((.+)\)/', $text, $prop)) {
-            $data += array_combine($prop[1], $prop[2]);
+            foreach ($prop[1] as $i => $key) {
+                $data->$key = $prop[2][$i];
+            }
         }
-        return (object)$data;
+        return $data;
     }
 
     public function tpl($id)
@@ -60,7 +52,8 @@ class ModelBasic
             header('Content-Type: application/json; charset=utf-8');
             echo json_encode($this->object, 320);
         } else {
-            require APP_MODULE . $this->name . '/template.php';
+            $tpl = APP_MODULE . $this->name . '/template.php';
+            is_file($tpl) && require($tpl);
         }
         exit;
     }

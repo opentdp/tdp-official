@@ -1,6 +1,6 @@
 <?php
 
-class HomeModel extends ModelBasic
+class HomeModel extends BasicModel
 {
     public $name = 'home';
 }

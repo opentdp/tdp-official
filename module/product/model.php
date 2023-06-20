@@ -1,6 +1,6 @@
 <?php
 
-class ProductModel extends ModelBasic
+class ProductModel extends BasicModel
 {
     public $name = 'product.php';
 }

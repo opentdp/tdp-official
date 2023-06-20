@@ -1,6 +1,6 @@
 <?php
 
-class ErrorModel extends ModelBasic
+class ErrorModel extends BasicModel
 {
     public $name = 'error';
 
