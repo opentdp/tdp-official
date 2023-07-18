@@ -82,8 +82,7 @@ class App
      */
     public static function autoload($name)
     {
-        $part = preg_split('/(?=[A-Z]+)/', $name);
-        $part = array_filter($part);
+        $part = array_filter(preg_split('/(?=[A-Z]+)/', $name));
         // 查找模块目录
         $file = implode('/', $part);
         $file = APP_MODULES . strtolower($file) . '.php';
