@@ -1,11 +1,10 @@
 <?php
 
 define('APP_ROOT', strtr(__DIR__, '\\', '/') . '/');
-require APP_ROOT . 'library/boot.php';
+require APP_ROOT . 'library/app.php';
 
-// 加载请求模块
+// 初始化
+App::init(PHP_SAPI === 'cli' ? $argv : null);
 
-$mod = ucfirst($_GET['mod'] ?? 'home');
-list($mod, $act) = explode('/', $mod . '/');
-
-obtain($mod . 'Model', $act)->output();
+// 启动应用
+App::boot($_GET['mod'] ?? 'home');

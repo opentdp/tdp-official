@@ -6,7 +6,6 @@ class ArticleModel extends BasicModel
 
     public function __construct()
     {
-        $id = $_GET['id'] ?? 1;
-        $this->object = $this->md($id);
+        $id = intval($_GET['id'] ?? 1);
     }
 }
