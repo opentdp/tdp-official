@@ -21,15 +21,9 @@ class AdminModel extends BasicModel
         $mdpath = APP_DATASET . $type . '/*.md';
         foreach (glob($mdpath) as $file) {
             $id = basename($file, '.md');
-            $item = $this->md_parse($file);
-            // 缓存结果
-            App::storage($type . '/' . $id, $item);
-            // 添加索引
-            $item->content = strip_tags($item->content);
-            if (mb_strlen($item->content) > 60) {
-                $item->content = mb_substr($item->content, 0, 60) . '...';
-            }
-            $result[$id] = $item;
+            $result[$id] = $this->md_parse($file);
+            App::storage($type . '/' . $id, $result[$id]);
+            unset($result[$id]->content); // 索引不需要内容
         }
         App::storage($type . '/index', $result);
     }
@@ -46,20 +40,29 @@ class AdminModel extends BasicModel
             $data->content = 'not found';
             return $data;
         }
+        // 读取文件
         $text = file_get_contents($file);
         // 解析标题
-        if (preg_match('/^#\s(.+)[\r\n]+/', $text, $subject)) {
-            $text = preg_replace('/^#\s(.+)[\r\n]+/', '', $text);
-            $data->subject = trim($subject[1]);
-        }
+        $text = preg_replace_callback('/^#\s(.+)[\r\n]+/', function ($rs) use ($data) {
+            $data->subject = trim($rs[1]);
+            return '';
+        }, $text);
         // 解析属性
-        if (preg_match_all('/\[\/\/\]: #(\w+) \((.+)\)/', $text, $prop)) {
-            foreach ($prop[1] as $i => $key) {
-                $data->$key = $prop[2][$i];
+        $text = preg_replace_callback('/\[\/\/\]: #(\w+) \((.+)\)[\r\n]+/', function ($rs) use ($data) {
+            $data->{$rs[1]} = trim($rs[2]);
+            return '';
+        }, $text);
+        // 解析内容
+        if ($text = trim($text)) {
+            $data->content = App::obtain('ParsedownExtraToc')->text($text);
+        }
+        // 获取摘要
+        if ($data->content && !$data->summary) {
+            $data->summary = strip_tags($data->content);
+            if (mb_strlen($data->summary) > 60) {
+                $data->summary = mb_substr($data->summary, 0, 60) . '...';
             }
         }
-        // 解析内容
-        $data->content = App::obtain('ParsedownExtraToc')->text($text);
         return $data;
     }
 }
