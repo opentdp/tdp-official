@@ -2,30 +2,30 @@
 <html lang="zh-Hans-CN">
 
 <head>
-    <?php $this->tpl('basic/header.php'); ?>
-    <?php $this->tpl('assets/css/blog.css'); ?>
+    <?php $this->need('basic/header.php'); ?>
+    <?php $this->need('assets/css/blog.css'); ?>
 </head>
 
 <body>
-    <?php $this->tpl('basic/loader.php'); ?>
-    <?php $this->tpl('basic/navbar.php'); ?>
+    <?php $this->need('basic/loader.php'); ?>
+    <?php $this->need('basic/navbar.php'); ?>
     <main id="main">
-        <?php $this->tpl('widget/breadcrumb.php'); ?>
+        <?php $this->need('widget/breadcrumb.php'); ?>
         <section id="blog" class="blog">
             <div class="container" data-aos="fade-up">
                 <div class="row g-5">
                     <div class="col-lg-8">
-                        <?php $this->tpl('blog/blog.php'); ?>
-                        <?php $this->tpl('blog/comments.php'); ?>
+                        <?php $this->need('blog/blog.php'); ?>
+                        <?php $this->need('blog/comments.php'); ?>
                     </div>
                     <div class="col-lg-4">
-                        <?php $this->tpl('blog/sidebar.php'); ?>
+                        <?php $this->need('blog/sidebar.php'); ?>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    <?php $this->tpl('basic/footer.php'); ?>
+    <?php $this->need('basic/footer.php'); ?>
 </body>
 
 </html>

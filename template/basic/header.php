@@ -11,13 +11,13 @@
 <link href="assets/img/icon.png" rel="apple-touch-icon">
 
 <!-- Vendor CSS Files -->
-<?php $this->tpl('assets/vendor/aos/aos.css'); ?>
-<?php $this->tpl('assets/vendor/bootstrap/css/bootstrap.min.css'); ?>
-<?php $this->tpl('assets/vendor/bootstrap-icons/bootstrap-icons.css'); ?>
-<?php $this->tpl('assets/vendor/boxicons/css/boxicons.min.css'); ?>
-<?php $this->tpl('assets/vendor/glightbox/css/glightbox.min.css'); ?>
-<?php $this->tpl('assets/vendor/remixicon/remixicon.css'); ?>
-<?php $this->tpl('assets/vendor/swiper/swiper-bundle.min.css'); ?>
+<?php $this->need('assets/vendor/aos/aos.css'); ?>
+<?php $this->need('assets/vendor/bootstrap/css/bootstrap.min.css'); ?>
+<?php $this->need('assets/vendor/bootstrap-icons/bootstrap-icons.css'); ?>
+<?php $this->need('assets/vendor/boxicons/css/boxicons.min.css'); ?>
+<?php $this->need('assets/vendor/glightbox/css/glightbox.min.css'); ?>
+<?php $this->need('assets/vendor/remixicon/remixicon.css'); ?>
+<?php $this->need('assets/vendor/swiper/swiper-bundle.min.css'); ?>
 
 <!-- Main CSS File -->
-<?php $this->tpl('assets/css/main.css'); ?>
+<?php $this->need('assets/css/main.css'); ?>

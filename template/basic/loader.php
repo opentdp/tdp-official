@@ -1,4 +1,4 @@
-<?php $this->tpl('assets/css/loader.css'); ?>
+<?php $this->need('assets/css/loader.css'); ?>
 
 <div class="preloader">
     <div class="loader">

@@ -2,24 +2,24 @@
 <html lang="zh-Hans-CN">
 
 <head>
-    <?php $this->tpl('basic/header.php'); ?>
+    <?php $this->need('basic/header.php'); ?>
 </head>
 
 <body>
-    <?php $this->tpl('basic/loader.php'); ?>
-    <?php $this->tpl('basic/navbar.php'); ?>
+    <?php $this->need('basic/loader.php'); ?>
+    <?php $this->need('basic/navbar.php'); ?>
     <main id="main">
-        <?php $this->tpl('home/hero.php'); ?>
-        <?php $this->tpl('home/clients.php'); ?>
-        <?php $this->tpl('home/about.php'); ?>
-        <?php $this->tpl('home/counts.php'); ?>
-        <?php $this->tpl('home/services.php'); ?>
-        <?php $this->tpl('home/articles.php'); ?>
-        <?php $this->tpl('home/features.php'); ?>
-        <?php $this->tpl('home/team.php'); ?>
-        <?php $this->tpl('home/contact.php'); ?>
+        <?php $this->need('home/hero.php'); ?>
+        <?php $this->need('home/clients.php'); ?>
+        <?php $this->need('home/about.php'); ?>
+        <?php $this->need('home/counts.php'); ?>
+        <?php $this->need('home/services.php'); ?>
+        <?php $this->need('home/articles.php'); ?>
+        <?php $this->need('home/features.php'); ?>
+        <?php $this->need('home/team.php'); ?>
+        <?php $this->need('home/contact.php'); ?>
     </main>
-    <?php $this->tpl('basic/footer.php'); ?>
+    <?php $this->need('basic/footer.php'); ?>
 </body>
 
 </html>

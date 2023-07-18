@@ -2,18 +2,18 @@
 <html lang="zh-Hans-CN">
 
 <head>
-    <?php $this->tpl('basic/header.php'); ?>
-    <?php $this->tpl('assets/css/blog.css'); ?>
+    <?php $this->need('basic/header.php'); ?>
+    <?php $this->need('assets/css/blog.css'); ?>
 </head>
 
 <body>
-    <?php $this->tpl('basic/loader.php'); ?>
-    <?php $this->tpl('basic/navbar.php'); ?>
+    <?php $this->need('basic/loader.php'); ?>
+    <?php $this->need('basic/navbar.php'); ?>
     <main id="main">
-        <?php $this->tpl('widget/breadcrumb.php'); ?>
-        <?php $this->tpl('article/article.php'); ?>
+        <?php $this->need('widget/breadcrumb.php'); ?>
+        <?php $this->need('article/article.php'); ?>
     </main>
-    <?php $this->tpl('basic/footer.php'); ?>
+    <?php $this->need('basic/footer.php'); ?>
 </body>
 
 </html>

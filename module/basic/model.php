@@ -31,7 +31,7 @@ class BasicModel
         return $data;
     }
 
-    public function tpl($id)
+    public function need($id)
     {
         switch (pathinfo($id, PATHINFO_EXTENSION)) {
             case 'php':
@@ -49,6 +49,26 @@ class BasicModel
         }
     }
 
+    public function cache($name, $data = true)
+    {
+        $file = APP_CACHED . $name . '.php';
+        //读取数据存储
+        if (is_bool($data)) {
+            return is_file($file) ? include($file) : array();
+        }
+        //写入数据存储
+        if (is_array($data)) {
+            $data = var_export($data, true);
+            is_dir(dirname($file)) || mkdir(dirname($file), 0755, true);
+            return file_put_contents($file, "<?php\nreturn {$data};\n?>");
+        }
+        //读取有效数据
+        if (is_numeric($data)) {
+            $time = is_file($file) ? filemtime($file) : 0;
+            return $time > $data ? $this->cache($name) : false;
+        }
+    }
+
     public function output()
     {
         $accept = $_SERVER['HTTP_ACCEPT'] ?? '';
@@ -57,7 +77,7 @@ class BasicModel
             echo json_encode($this->object, 320);
         } else {
             $tpl = APP_MODULE . $this->name . '/template.php';
-            is_file($tpl) && require($tpl);
+            is_file($tpl) && include($tpl);
         }
         exit;
     }
