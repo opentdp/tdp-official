@@ -32,7 +32,7 @@
 
                     <div>
                         <i class="ri-phone-line"></i>
-                        <p>+1 570 5996699/p>
+                        <p>+1(570)599-6699</p>
                     </div>
 
                     <div>

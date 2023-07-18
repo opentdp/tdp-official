@@ -5,11 +5,11 @@
 
             <div class="col-lg-6 text-lg-start text-center">
                 <div class="copyright">
-                    &copy; 2022 - 2023 <strong>OpenTDP</strong> Organization. All Rights Reserved
+                    &copy; 2022 - 2023 <strong>OpenTDP</strong>. All Rights Reserved.
                 </div>
                 <div class="credits">
-                    Powered by <a href="https://www.rehiy.com/" target="_blank">Rehiy</a>.
-                    CDN provided by <a href="https://cloud.tencent.com/product/teo" target="_blank">TencnetCloud Edgeone</a>
+                    Powered by <a href="https://www.rehiy.com/" target="_blank">Rehiy</a>,
+                    Server provided by <a href="https://curl.qcloud.com/N3b50Bq0" target="_blank">TencentCloud Lighthouse</a>.
                 </div>
             </div>
 
