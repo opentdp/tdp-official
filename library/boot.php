@@ -1,9 +1,18 @@
 <?php
 
-define('APP_CACHED', APP_ROOT . 'cached/');
+// 持久存储目录
 define('APP_DATASET', APP_ROOT . 'dataset/');
+
+// 基础类库目录
 define('APP_LIBRARY', APP_ROOT . 'library/');
+
+// 应用模块目录
 define('APP_MODULE', APP_ROOT . 'module/');
+
+// 运行数据目录
+define('APP_RUNTIME', APP_ROOT . 'runtime/');
+
+// 模板存放目录
 define('APP_TEMPLATE',  APP_ROOT . 'template/');
 
 /*

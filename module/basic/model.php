@@ -51,7 +51,7 @@ class BasicModel
 
     public function cache($name, $data = true)
     {
-        $file = APP_CACHED . $name . '.php';
+        $file = APP_RUNTIME . $name . '.php';
         //读取数据存储
         if (is_bool($data)) {
             return is_file($file) ? include($file) : array();
