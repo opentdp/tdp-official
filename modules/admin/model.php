@@ -48,9 +48,9 @@ class AdminModel extends BasicModel
         }
         $text = file_get_contents($file);
         // 解析标题
-        if (preg_match('/^#(.+)[\r\n]+/', $text, $subject)) {
-            $text = preg_replace('/^#(.+)[\r\n]+/', '', $text);
-            $data->subject = $subject[1];
+        if (preg_match('/^#\s(.+)[\r\n]+/', $text, $subject)) {
+            $text = preg_replace('/^#\s(.+)[\r\n]+/', '', $text);
+            $data->subject = trim($subject[1]);
         }
         // 解析属性
         if (preg_match_all('/\[\/\/\]: #(\w+) \((.+)\)/', $text, $prop)) {
