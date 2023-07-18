@@ -15,7 +15,7 @@
             <div class="container" data-aos="fade-up">
                 <div class="row g-5">
                     <div class="col-lg-8">
-                        <?php $this->tpl('blog/details.php'); ?>
+                        <?php $this->tpl('blog/blog.php'); ?>
                         <?php $this->tpl('blog/comments.php'); ?>
                     </div>
                     <div class="col-lg-4">

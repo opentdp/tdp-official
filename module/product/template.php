@@ -11,7 +11,7 @@
     <?php $this->tpl('basic/navbar.php'); ?>
     <main id="main">
         <?php $this->tpl('widget/breadcrumb.php'); ?>
-        <?php $this->tpl('product/details.php'); ?>
+        <?php $this->tpl('product/product.php'); ?>
     </main>
     <?php $this->tpl('basic/footer.php'); ?>
 </body>
