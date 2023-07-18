@@ -17,8 +17,8 @@
                 <nav class="footer-links text-lg-end text-center pt-lg-0 pt-2">
                     <a href="index.php?mod=home#hero" class="scrollto">首页</a>
                     <a href="index.php?mod=home#about" class="scrollto">关于</a>
-                    <a href="index.php?mod=article&id=1">隐私政策</a>
-                    <a href="index.php?mod=article&id=2">使用条款</a>
+                    <a href="index.php?mod=article&id=1">用户协议</a>
+                    <a href="index.php?mod=article&id=2">隐私政策</a>
                 </nav>
             </div>
 

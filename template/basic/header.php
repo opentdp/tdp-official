@@ -1,10 +1,12 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>OpenTDP 官方网站</title>
+
+<!-- Title -->
+<title><?= is_array($this->title) ? implode(' - ', $this->title) : ($this->title ?: 'OpenTDP 官方网站'); ?></title>
 
 <!-- SEO Tags -->
-<meta content="OpenTDP 一个源自于腾讯云开发者先锋（TDP）的自由开源技术组织，致力于探索云端的无限可能" name="description">
-<meta content="Open,TDP,OpenTDP,TDP-Cloud,TDP-Aiart" name="keywords">
+<meta content="<?= $this->description ?: 'OpenTDP 一个源自于腾讯云开发者先锋（TDP）的自由开源技术组织，致力于探索云端的无限可能'; ?>" name="description">
+<meta content="<?= $this->keywords ?: 'Open,TDP,OpenTDP,TDP-Cloud,TDP-Aiart'; ?>" name="keywords">
 
 <!-- Favicons -->
 <link href="assets/img/icon.png" rel="icon">

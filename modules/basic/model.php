@@ -8,6 +8,8 @@ class BasicModel
     public $keywords = '';
     public $description = '';
 
+    public $breadcrumbs = [];
+
     public $object = null;
 
     /**
