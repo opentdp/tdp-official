@@ -1,4 +1,4 @@
-<section id="breadcrumbs" class="breadcrumbs">
+<section id="breadcrumbs" class="breadcrumbs mb-4">
     <div class="container">
         <div class="d-flex justify-content-between align-items-center">
             <h2><?= $this->title; ?></h2>

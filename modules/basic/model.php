@@ -10,7 +10,7 @@ class BasicModel
 
     public $breadcrumbs = [];
 
-    public $object = null;
+    public $result = null;
 
     /**
      * 加载模块
@@ -43,7 +43,7 @@ class BasicModel
         $accept = $_SERVER['HTTP_ACCEPT'] ?? '';
         if (stripos($accept, 'application/json') !== false) {
             header('Content-Type: application/json; charset=utf-8');
-            echo json_encode($this->object, 320);
+            echo json_encode($this->result, 320);
         } else {
             $file = APP_MODULES . $this->name . '/template.php';
             is_file($file) && include($file);
