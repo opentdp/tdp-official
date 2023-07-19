@@ -11,7 +11,11 @@
     <?php $this->need('basic/navbar.php'); ?>
     <main id="main">
         <?php $this->need('widget/breadcrumb.php'); ?>
-        <?php $this->need('article/article.php'); ?>
+        <section id="article" class="article">
+            <div class="container" data-aos="fade-up">
+                <?php $this->need('article/article.php'); ?>
+            </div>
+        </section>
     </main>
     <?php $this->need('basic/footer.php'); ?>
 </body>

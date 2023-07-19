@@ -2,24 +2,35 @@
     <div class="container" data-aos="fade-up">
 
         <?php foreach ($this->articles as $id => $item) { ?>
-            <div class="row gy-4 mb-4 article-list">
-                <div class="col-lg-4 article-img">
+            <article class="row gy-4 mb-4">
+                <div class="col-lg-4 post-img">
                     <img src="<?= $item->thumb; ?>" alt="" class="img-fluid">
                 </div>
                 <div class="col-lg-8">
                     <h4 class="title">
                         <a href="index.php?mod=article&id=<?= $id; ?>"><?= $item->subject; ?></a>
                     </h4>
-                    <div class="d-flex align-items-center">
-                        <p class="article-author"><?= $item->author; ?></p>
-                        <p class="article-date">
-                            <time datetime="<?= $item->time; ?>"><?= $item->time; ?></time>
-                        </p>
-                        <p class="article-category"><?= $item->tags; ?></p>
+                    <div class="meta-top mb-2">
+                        <ul>
+                            <li class="d-flex align-items-center">
+                                <i class="bi bi-person"></i>
+                                <?= $item->author; ?>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <i class="bi bi-clock"></i>
+                                <time datetime="<?= $item->time; ?>"><?= $item->time; ?></time>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <i class="bi bi-tags"></i>
+                                <?= $item->tags; ?>
+                            </li>
+                        </ul>
                     </div>
-                    <p class="article-summary"><?= $item->summary; ?></p>
+                    <div class="summary">
+                        <p><?= $item->summary; ?></p>
+                    </div>
                 </div>
-            </div>
+            </article>
         <?php } ?>
 
         <div class="pagination mb-4">

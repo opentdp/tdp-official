@@ -27,15 +27,17 @@ class BasicModel
      */
     public function need($id)
     {
+        $version = time();
         switch (pathinfo($id, PATHINFO_EXTENSION)) {
             case 'php':
                 require APP_TEMPLATE . $id;
                 break;
             case 'css':
-                echo '<link href="' . $id . '" rel="stylesheet">';
+                $v = time();
+                echo '<link href="' . $id . '?t' . $version . '" rel="stylesheet">';
                 break;
             case  'js':
-                echo '<script src="' . $id . '"></script>';
+                echo '<script src="' . $id . '?t' . $version . '"></script>';
                 break;
             default:
                 echo '<!--not support ' . $id . '-->';

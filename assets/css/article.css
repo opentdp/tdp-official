@@ -2,10 +2,25 @@
   # Article List
   --------------------------------------------------------------*/
 
-.article .article-list article {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    height: 100%;
-    border-radius: 10px;
-    overflow: hidden;
+.article .meta-top {
+  color: #6c757d;
+}
+
+.article .meta-top ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.article .meta-top li i {
+  font-size: 16px;
+  margin-right: 8px;
+  line-height: 0;
+}
+
+.article .meta-top li+li {
+  padding-left: 20px;
 }
