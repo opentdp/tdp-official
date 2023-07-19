@@ -4,13 +4,19 @@ class BasicModel
 {
     public $name = 'basic';
 
-    public $title = '';
+    public $title = [];
     public $keywords = '';
     public $description = '';
 
     public $breadcrumbs = [];
 
+    public $site = null;
     public $result = null;
+
+    public function __construct()
+    {
+        $this->site = App::storage('site');
+    }
 
     /**
      * 加载模块
@@ -40,14 +46,19 @@ class BasicModel
      */
     public function output()
     {
+        // 输出JSON
         $accept = $_SERVER['HTTP_ACCEPT'] ?? '';
         if (stripos($accept, 'application/json') !== false) {
             header('Content-Type: application/json; charset=utf-8');
             echo json_encode($this->result, 320);
-        } else {
-            $file = APP_MODULES . $this->name . '/template.php';
-            is_file($file) && include($file);
+            exit;
         }
+        // 解析数据
+        is_array($this->result) && extract($this->result);
+        is_array($this->title) && $this->title[] = $this->site->title;
+        // 加载模板
+        $file = APP_MODULES . $this->name . '/template.php';
+        is_file($file) && include($file);
         exit;
     }
 }

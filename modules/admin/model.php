@@ -6,8 +6,19 @@ class AdminModel extends BasicModel
 
     public function build()
     {
+        $this->md_site();
         $this->md_index('blogs');
         $this->md_index('articles');
+    }
+
+    /**
+     * 站点配置
+     */
+    protected function md_site()
+    {
+        $file = APP_DATASET . 'site.md';
+        $this->site = $this->md_parse($file);
+        App::storage('site', $this->site);
     }
 
     /**
