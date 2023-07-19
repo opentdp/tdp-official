@@ -11,11 +11,14 @@ class BasicModel
     public $breadcrumbs = [];
 
     public $site = null;
+
     public $result = null;
 
     public function __construct()
     {
-        $this->site = App::storage('site');
+        if ($config = App::storage('config')) {
+            $this->site = $config->site;
+        }
     }
 
     /**

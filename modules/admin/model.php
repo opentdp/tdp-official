@@ -6,7 +6,7 @@ class AdminModel extends BasicModel
 
     public function build()
     {
-        $this->md_site();
+        $this->md_config();
         $this->md_index('blogs');
         $this->md_index('articles');
     }
@@ -14,11 +14,11 @@ class AdminModel extends BasicModel
     /**
      * 站点配置
      */
-    protected function md_site()
+    protected function md_config()
     {
-        $file = APP_DATASET . 'site.md';
-        $this->site = $this->md_parse($file);
-        App::storage('site', $this->site);
+        $config = $this->md_parse(APP_DATASET . 'config.md');
+        unset($config->subject, $config->content);
+        App::storage('config', $config);
     }
 
     /**
@@ -30,11 +30,11 @@ class AdminModel extends BasicModel
     {
         $result = [];
         $mdpath = APP_DATASET . $type . '/*.md';
-        foreach (glob($mdpath) as $file) {
+        foreach ((array)glob($mdpath) as $file) {
             $id = basename($file, '.md');
             $result[$id] = $this->md_parse($file);
             App::storage($type . '/' . $id, $result[$id]);
-            unset($result[$id]->content); // 索引不需要内容
+            unset($result[$id]->content); // 删除内容
         }
         App::storage($type . '/index', $result);
     }
@@ -54,13 +54,15 @@ class AdminModel extends BasicModel
         // 读取文件
         $text = file_get_contents($file);
         // 解析标题
-        $text = preg_replace_callback('/^#\s(.+)[\r\n]+/', function ($rs) use ($data) {
+        $text = preg_replace_callback('/^#\s(.+)[\r\n]+/U', function ($rs) use ($data) {
             $data->subject = trim($rs[1]);
             return '';
         }, $text);
         // 解析属性
-        $text = preg_replace_callback('/\[\/\/\]: #(\w+) \((.+)\)[\r\n]+/', function ($rs) use ($data) {
-            $data->{$rs[1]} = trim($rs[2]);
+        $text = preg_replace_callback('/```ini+(.+)```/Us', function ($rs) use ($data) {
+            foreach ((object)parse_ini_string($rs[1], true) as $k => $v) {
+                $data->{$k} = is_array($v) ? (object)$v : $v;
+            }
             return '';
         }, $text);
         // 解析内容
