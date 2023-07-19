@@ -22,4 +22,4 @@
 <?php $this->need('assets/vendor/swiper/swiper-bundle.min.css'); ?>
 
 <!-- Main CSS File -->
-<?php $this->need('assets/css/main.css'); ?>
+<?php $this->need('assets/css/global.css'); ?>

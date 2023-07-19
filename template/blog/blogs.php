@@ -161,7 +161,7 @@
 
         </div>
 
-        <div class="blog-pagination">
+        <div class="pagination">
             <ul class="justify-content-center">
                 <li><a href="#">1</a></li>
                 <li class="active"><a href="#">2</a></li>
