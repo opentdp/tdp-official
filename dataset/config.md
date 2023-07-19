@@ -3,7 +3,7 @@
 ```ini
 [site]
 
-type        = site
+model       = site
 title       = OpenTDP
 
 description = OpenTDP 一个源自于腾讯云开发者先锋（TDP）的自由开源技术组织，致力于探索云端的无限可能
@@ -14,31 +14,31 @@ credits     = 'Server provided by <a href="https://curl.qcloud.com/N3b50Bq0" tar
 
 [home]
 
-type  = home
+model = home
 title = 首页
 
 [blogs]
 
-type  = blog
+model = blog
 title = 博客
 
 [news]
 
-type  = article
+model = article
 title = 新闻动态
 
 [services]
 
-type  = article
+model = article
 title = 服务项目
 
 [policies]
 
-type  = article
+model = article
 title = 许可条款
 
 [products]
 
-type  = product
+model = product
 title = 产品信息
 ```
