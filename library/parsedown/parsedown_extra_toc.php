@@ -15,9 +15,7 @@ class ParsedownExtraToc extends ParsedownExtra
 
     /**
      * Singleton Pattern
-     *
      * @param  string  $name
-     *
      * @return ParsedownExtension
      */
     public static function instance($name = 'default')
@@ -31,9 +29,7 @@ class ParsedownExtraToc extends ParsedownExtra
 
     /**
      * Set toc parse rule
-     *
      * @param  string  $findTocSyntaxRule
-     *
      * @return $this
      */
     public function setTocSyntaxRule($findTocSyntaxRule)
@@ -45,9 +41,7 @@ class ParsedownExtraToc extends ParsedownExtra
 
     /**
      * Set original block parse rule
-     *
      * @param  array  $originalBlockRule
-     *
      * @return $this
      */
     public function addOriginalBlockRule($originalBlockRule)
@@ -59,9 +53,7 @@ class ParsedownExtraToc extends ParsedownExtra
 
     /**
      * Set absolute url for toc
-     *
      * @param  string  $absoluteUrl
-     *
      * @return $this
      */
     public function setAbsoluteUrl($absoluteUrl)
@@ -73,9 +65,7 @@ class ParsedownExtraToc extends ParsedownExtra
 
     /**
      * Parse text
-     *
      * @param  string  $text
-     *
      * @return string
      */
     public function text($text)
@@ -85,9 +75,7 @@ class ParsedownExtraToc extends ParsedownExtra
 
     /**
      * Hook before parse
-     *
      * @param  string  $text
-     *
      * @return string
      */
     protected function handleBefore($text)
@@ -105,9 +93,7 @@ class ParsedownExtraToc extends ParsedownExtra
 
     /**
      * Hook after parse
-     *
      * @param  string  $text
-     *
      * @return string
      */
     protected function handleAfter($text)
@@ -123,7 +109,6 @@ class ParsedownExtraToc extends ParsedownExtra
 
     /**
      * Build toc
-     *
      * @return string
      */
     protected function buildToc()
@@ -144,10 +129,8 @@ class ParsedownExtraToc extends ParsedownExtra
 
     /**
      * Add inline elements,applies the given handle list to the marker, handle function name like "inline{$handle}"
-     *
      * @param  string  $inlineMarker
      * @param  array  $inlineHandleList
-     *
      * @return $this
      */
     public function addInlineElements($inlineMarker, $inlineHandleList)
@@ -163,10 +146,8 @@ class ParsedownExtraToc extends ParsedownExtra
 
     /**
      * Add block elements, applies the given handle list to the marker, handle function name like "block{$handle}"
-     *
      * @param  string  $blockMarker
      * @param  array  $blockHandleList
-     *
      * @return $this
      */
     public function addBlockElements($blockMarker, $blockHandleList)
@@ -178,9 +159,7 @@ class ParsedownExtraToc extends ParsedownExtra
 
     /**
      * Parse header
-     *
      * @param $line
-     *
      * @return array
      */
     protected function blockHeader($line)
@@ -209,9 +188,7 @@ class ParsedownExtraToc extends ParsedownExtra
 
     /**
      * Hook for mermaid
-     *
      * @param $Line
-     *
      * @return array
      */
     protected function blockFencedCode($Line)
@@ -236,11 +213,8 @@ class ParsedownExtraToc extends ParsedownExtra
 
     /**
      * Parse original
-     *
      * @see https://github.com/mrgeneralgoo/typecho-markdown/pull/7
-     *
      * @param  array  $excerpt
-     *
      * @return array|null
      */
     protected function inlineOriginal($excerpt)
