@@ -13,8 +13,8 @@
                 <nav class="footer-links text-lg-end text-center pt-lg-0 pt-2">
                     <a href="index.php?rt=home#hero" class="scrollto">首页</a>
                     <a href="index.php?rt=home#about" class="scrollto">关于</a>
-                    <a href="index.php?rt=article/policies&id=1">用户协议</a>
-                    <a href="index.php?rt=article/policies&id=2">隐私政策</a>
+                    <a href="index.php?rt=article&cid=policies&aid=1">用户协议</a>
+                    <a href="index.php?rt=article&cid=policies&aid=2">隐私政策</a>
                 </nav>
             </div>
         </div>

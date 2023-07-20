@@ -23,7 +23,7 @@ class App
         list($mod, $act) = explode('/', $name . '/');
         $obj = self::obtain(ucfirst($mod) . 'Model');
         // 调用模块方法
-        $act && $obj->call($act);
+        $act && $obj->$act();
         $obj->output();
     }
 
@@ -37,7 +37,7 @@ class App
     {
         static $list = [];
         // 创建新实例
-        if (empty($models[$name])) {
+        if (empty($list[$name] && class_exists($name))) {
             $list[$name] = new $name();
         }
         // 参数初始化
@@ -92,6 +92,8 @@ class App
         if (is_file($file) && require($file)) {
             return true;
         }
+        // 找不到类文件
+        self::obtain('ErrorModel')->warning('%s not found', $name);
     }
 
     /**

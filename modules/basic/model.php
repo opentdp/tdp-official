@@ -17,16 +17,8 @@ class BasicModel
         $this->site = App::storage('meta');
     }
 
-    /**
-     * 调用方法
-     * @param string $name
-     * @return mixed
-     */
-    public function call($name)
+    public function __call($name, $args)
     {
-        if (method_exists($this, $name)) {
-            return $this->$name();
-        }
         App::obtain('ErrorModel')->warning('%s not found', $name);
     }
 
