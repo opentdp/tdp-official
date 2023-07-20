@@ -4,16 +4,20 @@ class BlogsModel extends BasicModel
 {
     protected $name = 'blogs';
 
-    public $blogs = [];
+    public $blogs = null;
 
-    public function init()
+    public function view($args)
     {
-        $id = intval($_GET['id'] ?? 1);
-        $this->blogs = App::storage('blogs/index');
+        $this->get_blogs();
         // 设置模板变量
         $this->title = '博文列表';
         $this->breadcrumbs = [
-            ['title' => '博客', 'url' => 'index.php?rt=blogs'],
+            ['title' => '博客', 'url' => 'index.php?/blog'],
         ];
+    }
+
+    protected function get_blogs()
+    {
+        $this->blogs = App::storage('blog/index');
     }
 }

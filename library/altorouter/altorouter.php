@@ -181,7 +181,7 @@ class Altorouter
 
         // set Request Url if it isn't passed as parameter
         if ($requestUrl === null) {
-            $requestUrl = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '/';
+            $requestUrl = $_SERVER['REQUEST_URI'] ?? '/';
         }
 
         // strip base path from request url
@@ -192,11 +192,12 @@ class Altorouter
             $requestUrl = substr($requestUrl, 0, $strpos);
         }
 
+        // get last character of request url
         $lastRequestUrlChar = $requestUrl ? $requestUrl[strlen($requestUrl) - 1] : '';
 
         // set Request Method if it isn't passed as a parameter
         if ($requestMethod === null) {
-            $requestMethod = isset($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD'] : 'GET';
+            $requestMethod = $_SERVER['REQUEST_METHOD'] ?? 'GET';
         }
 
         foreach ($this->routes as $handler) {

@@ -10,7 +10,7 @@
                         </div>
                         <p class="post-category"><?= $item->tags; ?></p>
                         <h4 class="title">
-                            <a href="index.php?rt=blog&id=<?= $id; ?>"><?= $item->subject; ?></a>
+                            <a href="index.php?rt=/blog/<?= $id; ?>"><?= $item->subject; ?></a>
                         </h4>
                         <div class="d-flex align-items-center">
                             <img src="assets/img/blog/author-6.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">

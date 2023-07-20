@@ -8,13 +8,12 @@ class AdminModel extends BasicModel
      * 重建缓存
      * @return void
      */
-    protected function build()
+    public function build()
     {
         $rs = $this->build_meta();
         foreach ($rs as $cate => $meta) {
             $this->build_index($cate);
         }
-        App::obtain('ErrorModel')->message('ok');
     }
 
     /**

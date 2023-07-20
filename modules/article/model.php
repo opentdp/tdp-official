@@ -7,15 +7,21 @@ class ArticleModel extends BasicModel
     public $category = null;
     public $article = null;
 
-    public function init()
+    public function view($args)
     {
-        $this->get_category();
-        $this->get_article();
+        $this->get_category($args['cid']);
+        $this->get_article($args['aid']);
+        // 设置模板变量
+        $this->title = $this->article->subject;
+        $this->keywords = $this->article->tags;
+        $this->description = $this->article->summary;
+        $this->breadcrumbs = [
+            ['title' => $this->category->title, 'url' => 'index.php?rt=/' . $this->category->id],
+        ];
     }
 
-    protected function get_category()
+    protected function get_category($cid)
     {
-        $cid = $_GET['cid'] ?? '';
         $this->category = App::storage($cid . '/meta');
         // 记录不存在
         if (!$this->category) {
@@ -27,20 +33,12 @@ class ArticleModel extends BasicModel
         }
     }
 
-    protected function get_article()
+    protected function get_article($aid)
     {
-        $aid = intval($_GET['aid'] ?? 1);
         $this->article = App::storage($this->category->id . '/' . $aid);
         // 记录不存在
         if (!$this->article) {
             App::obtain('ErrorModel')->warning('%s not found', $aid);
         }
-        // 设置模板变量
-        $this->title = $this->article->subject;
-        $this->keywords = $this->article->tags;
-        $this->description = $this->article->summary;
-        $this->breadcrumbs = [
-            ['title' => $this->category->title, 'url' => 'index.php?rt=articles&cid=' . $this->category->id],
-        ];
     }
 }

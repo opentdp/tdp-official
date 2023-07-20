@@ -7,15 +7,19 @@ class ArticlesModel extends BasicModel
     public $category = null;
     public $articles = null;
 
-    public function init()
+    public function view($args)
     {
-        $this->get_category();
+        $this->get_category($args['cid']);
         $this->get_articles();
+        // 设置模板变量
+        $this->title = $this->category->title;
+        $this->breadcrumbs = [
+            ['title' => $this->category->title, 'url' => 'index.php?rt=/' . $this->category->id],
+        ];
     }
 
-    protected function get_category()
+    protected function get_category($cid)
     {
-        $cid = $_GET['cid'] ?? '';
         $this->category = App::storage($cid . '/meta');
         // 记录不存在
         if (!$this->category) {
@@ -34,10 +38,5 @@ class ArticlesModel extends BasicModel
         if (!$this->articles) {
             App::obtain('ErrorModel')->warning('empty %s', $this->category->id);
         }
-        // 设置模板变量
-        $this->title = $this->category->title;
-        $this->breadcrumbs = [
-            ['title' => $this->category->title, 'url' => 'index.php?rt=articles&cid=' . $this->category->id],
-        ];
     }
 }

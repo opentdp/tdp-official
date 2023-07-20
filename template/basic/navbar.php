@@ -7,8 +7,8 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto active" href="index.php?rt=home#hero">首页</a></li>
-                <li><a class="nav-link scrollto" href="index.php?rt=home#about">关于</a></li>
+                <li><a class="nav-link scrollto active" href="index.php?rt=/#hero">首页</a></li>
+                <li><a class="nav-link scrollto" href="index.php?rt=/#about">关于</a></li>
                 <li class="dropdown">
                     <a><span>开源</span><i class="bi bi-chevron-down"></i></a>
                     <ul>
@@ -31,12 +31,12 @@
                         </li>
                     </ul>
                 </li>
-                <li><a class="nav-link scrollto" href="index.php?rt=home#services">动态</a></li>
-                <li><a class="nav-link scrollto" href="index.php?rt=home#features">推荐</a></li>
-                <li><a class="nav-link scrollto" href="index.php?rt=home#team">团队</a></li>
-                <li><a class="nav-link scrollto" href="index.php?rt=home#contact">联系</a></li>
+                <li><a class="nav-link scrollto" href="index.php?rt=/#services">动态</a></li>
+                <li><a class="nav-link scrollto" href="index.php?rt=/#features">推荐</a></li>
+                <li><a class="nav-link scrollto" href="index.php?rt=/#team">团队</a></li>
+                <li><a class="nav-link scrollto" href="index.php?rt=/#contact">联系</a></li>
                 <li><a class="nav-link" href="https://docs.opentdp.org" target="_blank">文档</a></li>
-                <li><a class="getstarted scrollto d-none d-lg-inline" href="index.php?rt=home#about">启航</a></li>
+                <li><a class="getstarted scrollto d-none d-lg-inline" href="index.php?rt=/#about">启航</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>

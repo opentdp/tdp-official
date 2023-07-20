@@ -47,7 +47,7 @@
             </div>
 
             <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
-                <form class="php-email-form" action="index.php?rt=contact/submit" method="post" role="form">
+                <form class="php-email-form" action="index.php?rt=/contact/submit" method="post" role="form">
                     <div class="form-group">
                         <input type="text" class="form-control" name="name" placeholder="名字" required>
                     </div>

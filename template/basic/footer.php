@@ -11,10 +11,10 @@
             </div>
             <div class="col-lg-6">
                 <nav class="footer-links text-lg-end text-center pt-lg-0 pt-2">
-                    <a href="index.php?rt=home#hero" class="scrollto">首页</a>
-                    <a href="index.php?rt=home#about" class="scrollto">关于</a>
-                    <a href="index.php?rt=article&cid=policies&aid=1">用户协议</a>
-                    <a href="index.php?rt=article&cid=policies&aid=2">隐私政策</a>
+                    <a href="index.php?rt=/#hero" class="scrollto">首页</a>
+                    <a href="index.php?rt=/#about" class="scrollto">关于</a>
+                    <a href="index.php?rt=/policy/1">用户协议</a>
+                    <a href="index.php?rt=/policy/2">隐私政策</a>
                 </nav>
             </div>
         </div>

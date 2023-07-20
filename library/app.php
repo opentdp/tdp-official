@@ -3,28 +3,20 @@
 class App
 {
     /**
-     * 初始化应用
-     * @param array $argv
-     * @return void
+     * @var Altorouter $router
      */
-    public static function init($argv)
-    {
-        defined('APP_DATASET') || self::register($argv);
-    }
+    static $router = null;
 
     /**
      * 启动指定模块
-     * @param string $name
+     * @param string $route
      * @return void
      */
     public static function boot($name)
     {
-        // 加载请求模块
-        list($mod, $act) = explode('/', $name . '/');
-        $obj = self::obtain(ucfirst($mod) . 'Model');
-        // 调用模块方法
-        $act && $obj->$act();
-        $obj->output();
+        self::register();
+        $match = self::$router->match($name);
+        call_user_func($match['target'], $match['params'])->output();
     }
 
     /**
@@ -33,18 +25,12 @@ class App
      * @param mixed $args
      * @return object
      */
-    public static function obtain($name, ...$args)
+    public static function obtain($name)
     {
         static $list = [];
-        // 创建新实例
         if (empty($list[$name] && class_exists($name))) {
             $list[$name] = new $name();
         }
-        // 参数初始化
-        if (method_exists($list[$name], 'init')) {
-            $list[$name]->init(...$args);
-        }
-        // 返回唯一实例
         return $list[$name];
     }
 
@@ -93,7 +79,7 @@ class App
             return true;
         }
         // 找不到类文件
-        self::obtain('ErrorModel')->warning('%s not found', $name);
+        (new ErrorModel())->warning('%s not found', $name);
     }
 
     /**
@@ -101,7 +87,7 @@ class App
      * @param array $argv
      * @return void
      */
-    private static function register($argv)
+    private static function register()
     {
         // 持久存储目录
         define('APP_DATASET', APP_ROOT . 'dataset/');
@@ -115,9 +101,68 @@ class App
         define('APP_TEMPLATE',  APP_ROOT . 'template/');
         // 注册自动加载函数
         spl_autoload_register('App::autoload', true, true);
-        // 参数解析为 $_GET
-        if (!empty($argv)) {
-            parse_str(implode('&', array_slice($argv, 1)), $_GET);
-        }
+        // 注册页面路由
+        self::route_register();
+    }
+
+    /**
+     * 注册页面路由
+     * @return void
+     */
+    private static function route_register()
+    {
+        self::$router = new Altorouter();
+
+        // 首页
+
+        self::$router->map('GET', '/', function ($args) {
+            $model = new HomeModel();
+            $model->view($args);
+            return $model;
+        });
+
+        // 博客
+
+        self::$router->map('GET', '/blog', function ($args) {
+            $model = new BlogsModel();
+            $model->view($args);
+            return $model;
+        });
+
+        self::$router->map('GET', '/blog/[i:bid]', function ($args) {
+            $model = new BlogModel();
+            $model->view($args);
+            return $model;
+        });
+
+        // 许可条款
+
+        self::$router->map('GET', '/policy', function ($args) {
+            $model = new ArticlesModel();
+            $model->view($args + ['cid' => 'policy']);
+            return $model;
+        });
+
+        self::$router->map('GET', '/policy/[i:aid]', function ($args) {
+            $model = new ArticleModel();
+            $model->view($args + ['cid' => 'policy']);
+            return $model;
+        });
+
+        // 重建缓存
+
+        self::$router->map('GET', '/admin/build', function ($args) {
+            $model = new AdminModel();
+            $model->build($args);
+            return $model;
+        });
+
+        // 回退路由
+
+        self::$router->map('GET', '*', function ($args) {
+            $model = new ErrorModel();
+            $model->warning('not found', $args);
+            return $model;
+        });
     }
 }
