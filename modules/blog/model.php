@@ -12,7 +12,7 @@ class BlogModel extends BasicModel
         $id = intval($_GET['id'] ?? 1);
         $this->blog = App::storage('blogs/' . $id);
         $this->blogs = App::storage('blogs/index');
-        // 模板变量
+        // 设置模板变量
         $this->title = $this->blog->subject;
         $this->keywords = $this->blog->tags;
         $this->description = $this->blog->summary;
