@@ -27,10 +27,6 @@ class ArticleModel extends BasicModel
         if (!$this->category) {
             App::obtain('ErrorModel')->warning('%s not found', $cid);
         }
-        // 记录模型不匹配
-        if ($this->category->model != 'article') {
-            App::obtain('ErrorModel')->warning('%s model error', $cid);
-        }
     }
 
     protected function get_article($aid)

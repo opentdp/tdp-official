@@ -23,11 +23,14 @@ class BlogModel extends BasicModel
     protected function get_blogs()
     {
         $this->blogs = App::storage('blog/index');
+        // 记录不存在
+        if (!$this->blogs) {
+            App::obtain('ErrorModel')->warning('%s not found', 'blog');
+        }
     }
 
     protected function get_blog($bid)
     {
-        $this->blogs = App::storage('blog/index');
         $this->blog = App::storage('blog/' . $bid);
         // 记录不存在
         if (!$this->blog) {

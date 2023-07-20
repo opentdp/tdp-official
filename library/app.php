@@ -102,67 +102,7 @@ class App
         // 注册自动加载函数
         spl_autoload_register('App::autoload', true, true);
         // 注册页面路由
-        self::route_register();
-    }
-
-    /**
-     * 注册页面路由
-     * @return void
-     */
-    private static function route_register()
-    {
-        self::$router = new Altorouter();
-
-        // 首页
-
-        self::$router->map('GET', '/', function ($args) {
-            $model = new HomeModel();
-            $model->view($args);
-            return $model;
-        });
-
-        // 博客
-
-        self::$router->map('GET', '/blog', function ($args) {
-            $model = new BlogsModel();
-            $model->view($args);
-            return $model;
-        });
-
-        self::$router->map('GET', '/blog/[i:bid]', function ($args) {
-            $model = new BlogModel();
-            $model->view($args);
-            return $model;
-        });
-
-        // 许可条款
-
-        self::$router->map('GET', '/policy', function ($args) {
-            $model = new ArticlesModel();
-            $model->view($args + ['cid' => 'policy']);
-            return $model;
-        });
-
-        self::$router->map('GET', '/policy/[i:aid]', function ($args) {
-            $model = new ArticleModel();
-            $model->view($args + ['cid' => 'policy']);
-            return $model;
-        });
-
-        // 重建缓存
-
-        self::$router->map('GET', '/admin/build', function ($args) {
-            $model = new AdminModel();
-            $model->build($args);
-            return $model;
-        });
-
-        // 回退路由
-
-        self::$router->map('GET', '*', function ($args) {
-            $model = new ErrorModel();
-            $model->warning('not found', $args);
-            return $model;
-        });
+        require(APP_MODULES . 'route.php');
+        self::$router = $router;
     }
 }
