@@ -2,5 +2,5 @@
 
 class ProductModel extends BasicModel
 {
-    public $name = 'product.php';
+    protected $name = 'product';
 }

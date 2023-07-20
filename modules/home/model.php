@@ -2,5 +2,5 @@
 
 class HomeModel extends BasicModel
 {
-    public $name = 'home';
+    protected $name = 'home';
 }

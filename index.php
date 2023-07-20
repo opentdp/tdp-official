@@ -7,4 +7,4 @@ require APP_ROOT . 'library/app.php';
 App::init(PHP_SAPI === 'cli' ? $argv : null);
 
 // 启动应用
-App::boot($_GET['mod'] ?? 'home');
+App::boot($_GET['rt'] ?? 'home');

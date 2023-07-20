@@ -2,7 +2,19 @@
 
 class ErrorModel extends BasicModel
 {
-    public $name = 'error';
+    protected $name = 'error';
 
     public $content = '';
+
+    public function message($msg, ...$args)
+    {
+        $this->content = sprintf($msg, ...$args);
+        $this->output();
+    }
+
+    public function warning($msg, ...$args)
+    {
+        $this->content = sprintf($msg, ...$args);
+        $this->output();
+    }
 }

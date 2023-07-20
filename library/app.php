@@ -23,10 +23,7 @@ class App
         list($mod, $act) = explode('/', $name . '/');
         $obj = self::obtain(ucfirst($mod) . 'Model');
         // 调用模块方法
-        if ($act && method_exists($obj, $act)) {
-            $obj->$act();
-        }
-        // 输出结果
+        $act && $obj->call($act);
         $obj->output();
     }
 

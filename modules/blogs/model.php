@@ -2,7 +2,7 @@
 
 class BlogsModel extends BasicModel
 {
-    public $name = 'blogs';
+    protected $name = 'blogs';
 
     public $blogs = [];
 
@@ -13,7 +13,7 @@ class BlogsModel extends BasicModel
         // 模板变量
         $this->title = '博文列表';
         $this->breadcrumbs = [
-            ['title' => '博客', 'url' => 'index.php?mod=blogs'],
+            ['title' => '博客', 'url' => 'index.php?rt=blogs'],
         ];
     }
 }

@@ -2,45 +2,55 @@
 
 class BasicModel
 {
-    public $name = 'basic';
+    protected $name = 'basic';
 
-    public $title = [];
-    public $keywords = '';
-    public $description = '';
+    protected $site = null;
 
-    public $breadcrumbs = [];
+    protected $title = [];
+    protected $keywords = '';
+    protected $description = '';
 
-    public $site = null;
-
-    public $result = null;
+    protected $breadcrumbs = [];
 
     public function __construct()
     {
-        if ($config = App::storage('config')) {
-            $this->site = $config->site;
+        $this->site = App::storage('meta');
+    }
+
+    /**
+     * 调用方法
+     * @param string $name
+     * @return mixed
+     */
+    public function call($name)
+    {
+        if (method_exists($this, $name)) {
+            return $this->$name();
         }
+        App::obtain('ErrorModel')->warning('%s not found', $name);
     }
 
     /**
      * 加载模块
-     * @param string $id
+     * @param string $name
+     * @return void
      */
-    public function need($id)
+    public function need($name)
     {
         $version = time();
-        switch (pathinfo($id, PATHINFO_EXTENSION)) {
+        switch (pathinfo($name, PATHINFO_EXTENSION)) {
             case 'php':
-                require APP_TEMPLATE . $id;
+                require(APP_TEMPLATE . $name);
                 break;
             case 'css':
                 $v = time();
-                echo '<link href="' . $id . '?t' . $version . '" rel="stylesheet">';
+                printf('<link href="%s?t%d" rel="stylesheet">', $name, $version);
                 break;
             case  'js':
-                echo '<script src="' . $id . '?t' . $version . '"></script>';
+                printf('<script src="%s?t%d"></script>', $name, $version);
                 break;
             default:
-                echo '<!--not support ' . $id . '-->';
+                printf('<!--not support %s-->', $name);
                 break;
         }
     }
@@ -51,16 +61,22 @@ class BasicModel
      */
     public function output()
     {
+        // 输出内容
+        if (PHP_SAPI === 'cli') {
+            echo json_encode($this, 320);
+            exit;
+        }
         // 输出JSON
         $accept = $_SERVER['HTTP_ACCEPT'] ?? '';
         if (stripos($accept, 'application/json') !== false) {
             header('Content-Type: application/json; charset=utf-8');
-            echo json_encode($this->result, 320);
+            echo json_encode($this, 320);
             exit;
         }
-        // 解析数据
-        is_array($this->result) && extract($this->result);
-        is_array($this->title) && $this->title[] = $this->site->title;
+        // 修正标题
+        if (is_array($this->title)) {
+            $this->title[] = $this->site->title;
+        }
         // 加载模板
         $file = APP_MODULES . $this->name . '/template.php';
         is_file($file) && include($file);

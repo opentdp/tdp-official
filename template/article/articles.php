@@ -8,7 +8,7 @@
                 </div>
                 <div class="col-lg-8">
                     <h4 class="title">
-                        <a href="index.php?mod=article&id=<?= $id; ?>"><?= $item->subject; ?></a>
+                        <a href="index.php?rt=article/<?= $this->category->id; ?>&id=<?= $id; ?>"><?= $item->subject; ?></a>
                     </h4>
                     <div class="meta-top mb-2">
                         <ul>

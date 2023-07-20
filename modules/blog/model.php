@@ -2,7 +2,7 @@
 
 class BlogModel extends BasicModel
 {
-    public $name = 'blog';
+    protected $name = 'blog';
 
     public $blog = null;
     public $blogs = [];
@@ -17,7 +17,7 @@ class BlogModel extends BasicModel
         $this->keywords = $this->blog->tags;
         $this->description = $this->blog->summary;
         $this->breadcrumbs = [
-            ['title' => '博客', 'url' => 'index.php?mod=blogs'],
+            ['title' => '博客', 'url' => 'index.php?rt=blogs'],
         ];
     }
 }

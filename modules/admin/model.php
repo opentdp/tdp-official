@@ -2,45 +2,65 @@
 
 class AdminModel extends BasicModel
 {
-    public $name = 'admin';
-
-    public function build()
-    {
-        $this->md_config();
-        $this->md_index('blogs');
-        $this->md_index('articles');
-    }
+    protected $name = 'admin';
 
     /**
-     * 站点配置
-     */
-    protected function md_config()
-    {
-        $config = $this->md_parse(APP_DATASET . 'config.md');
-        unset($config->subject, $config->content);
-        App::storage('config', $config);
-    }
-
-    /**
-     * 生成md索引
-     * @param string $type
+     * 重建缓存
      * @return void
      */
-    protected function md_index($type)
+    protected function build()
     {
-        $result = [];
-        $mdpath = APP_DATASET . $type . '/*.md';
-        foreach ((array)glob($mdpath) as $file) {
-            $id = basename($file, '.md');
-            $result[$id] = $this->md_parse($file);
-            App::storage($type . '/' . $id, $result[$id]);
-            unset($result[$id]->content); // 删除内容
+        $rs = $this->build_meta();
+        foreach ($rs as $cate => $meta) {
+            $this->build_index($cate);
         }
-        App::storage($type . '/index', $result);
+        App::obtain('ErrorModel')->message('ok');
     }
 
     /**
-     * 解析md文件
+     * 生成元数据
+     * @return object
+     */
+    protected function build_meta()
+    {
+        $index = new stdClass();
+        $fpath = APP_DATASET . '{,*/}meta.ini';
+        foreach ((array)glob($fpath, GLOB_BRACE) as $file) {
+            $rs = (object)parse_ini_file($file, true);
+            $rs->id = dirname(str_replace(APP_DATASET, '', $file));
+            App::storage($rs->id . '/meta', $rs);
+            // 添加到索引
+            if ($rs->id != '.') {
+                $index->{$rs->id} = $rs;
+            }
+        }
+        App::storage('index', $index);
+        return $index;
+    }
+
+    /**
+     * 生成作品索引
+     * @param string $cate
+     * @return object
+     */
+    protected function build_index($cate)
+    {
+        $index = new stdClass();
+        $fpath = APP_DATASET . $cate . '/*.md';
+        foreach ((array)glob($fpath, GLOB_BRACE) as $file) {
+            $rs = $this->md_parse($file);
+            $rs->id = basename($file, '.md');
+            App::storage($cate . '/' . $rs->id, $rs);
+            // 添加到索引
+            unset($rs->content);
+            $index->{$rs->id} = $rs;
+        }
+        App::storage($cate . '/index', $index);
+        return $index;
+    }
+
+    /**
+     * 解析 Markdown
      * @param string $file
      * @return object
      */
