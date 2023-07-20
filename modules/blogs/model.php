@@ -12,7 +12,7 @@ class BlogsModel extends BasicModel
         // 设置模板变量
         $this->title = '博文列表';
         $this->breadcrumbs = [
-            ['title' => '博客', 'url' => 'index.php?/blog'],
+            ['title' => '博客', 'url' => 'index.php?rt=/blog'],
         ];
     }
 
