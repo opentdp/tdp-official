@@ -35,6 +35,7 @@
                 <li><a class="nav-link scrollto" href="index.php?rt=/#features">推荐</a></li>
                 <li><a class="nav-link scrollto" href="index.php?rt=/#team">团队</a></li>
                 <li><a class="nav-link scrollto" href="index.php?rt=/#contact">联系</a></li>
+                <li><a class="nav-link" href="index.php?rt=/blog">博客</a></li>
                 <li><a class="nav-link" href="https://docs.opentdp.org" target="_blank">文档</a></li>
                 <li><a class="getstarted scrollto d-none d-lg-inline" href="index.php?rt=/#about">启航</a></li>
             </ul>
