@@ -2,7 +2,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
 <!-- Title -->
-<title><?= implode(' - ', (array)$this->title);  ?></title>
+<title><?= implode(' - ', $this->title);  ?></title>
 
 <!-- SEO Tags -->
 <meta content="<?= $this->keywords ?: $this->site->keywords; ?>" name="keywords">

@@ -66,9 +66,10 @@ class BasicModel
             exit;
         }
         // 修正标题
-        if (is_array($this->title)) {
-            $this->title[] = $this->site->title;
+        if (!is_array($this->title)) {
+            $this->title = (array)$this->title;
         }
+        $this->title[] = $this->site->title;
         // 加载模板
         $file = APP_MODULES . $this->name . '/template.php';
         is_file($file) && include($file);
