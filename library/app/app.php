@@ -17,7 +17,7 @@ class App
         // 注册页面路由器
         self::$router = new AppRouter();
         require APP_MODULES . 'route.php';
-        $match = self::$router->match($url);
+        $match = self::$router->match($url ?: '/');
         call_user_func($match['target'], $match['params'])->output();
     }
 

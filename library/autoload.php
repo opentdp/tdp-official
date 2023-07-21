@@ -1,19 +1,29 @@
 <?php
 
 // 持久存储目录
-define('APP_DATASET', APP_ROOT . 'dataset/');
+
+defined('APP_DATASET') ||
+    define('APP_DATASET', APP_ROOT . 'dataset/');
 
 // 基础类库目录
-define('APP_LIBRARY', APP_ROOT . 'library/');
+
+defined('APP_LIBRARY') ||
+    define('APP_LIBRARY', APP_ROOT . 'library/');
 
 // 应用模块目录
-define('APP_MODULES', APP_ROOT . 'modules/');
+
+defined('APP_MODULES')  ||
+    define('APP_MODULES', APP_ROOT . 'modules/');
 
 // 运行数据目录
-define('APP_RUNTIME', APP_ROOT . 'runtime/');
+
+defined('APP_RUNTIME')  ||
+    define('APP_RUNTIME', APP_ROOT . 'runtime/');
 
 // 模板文件目录
-define('APP_TEMPLATE',  APP_ROOT . 'template/');
+
+defined('APP_TEMPLATE') ||
+    define('APP_TEMPLATE', APP_ROOT . 'template/');
 
 /**
  * 注册自动加载函数
