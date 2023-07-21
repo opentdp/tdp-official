@@ -27,11 +27,9 @@ class AdminModel extends BasicModel
         foreach ((array)glob($fpath, GLOB_BRACE) as $file) {
             $rs = parse_ini_file($file, true);
             $rs['id'] = dirname(str_replace(APP_DATASET, '', $file));
-            App::cache($rs['id'] . '/meta', $rs);
             // 添加到索引
-            if ($rs['id'] != '.') {
-                $index[$rs['id']] = $rs;
-            }
+            App::cache($rs['id'] . '/meta', $rs);
+            $rs['id'] != '.' && $index[$rs['id']] = $rs;
         }
         App::cache('index', $index);
         return $index;
@@ -49,10 +47,9 @@ class AdminModel extends BasicModel
         foreach ((array)glob($fpath, GLOB_BRACE) as $file) {
             $rs = $this->md_parse($file);
             $rs['id'] = basename($file, '.md');
-            App::cache($cate . '/' . $rs['id'], $rs);
             // 添加到索引
-            unset($rs['content']);
-            $index[$rs['id']] = $rs;
+            App::cache($cate . '/' . $rs['id'], $rs);
+            $index[$rs['id']] = array_diff_key($rs, ['content' => 1]);
         }
         App::cache($cate . '/index', $index);
         return $index;
@@ -65,23 +62,20 @@ class AdminModel extends BasicModel
      */
     protected function md_parse($file)
     {
-        $data = [];
         if (!is_file($file)) {
-            $data['content'] = 'not found';
-            return $data;
+            return ['content' => 'not found'];
         }
         // 读取文件
-        $text = file_get_contents($file);
+        $data = [];
+        $text = trim(file_get_contents($file));
         // 解析标题
-        $text = preg_replace_callback('/^#\s(.+)[\r\n]+/U', function ($rs) use ($data) {
+        $text = preg_replace_callback('/^#\s(.+)[\r\n]+/U', function ($rs) use (&$data) {
             $data['subject'] = trim($rs[1]);
             return '';
         }, $text);
         // 解析属性
-        $text = preg_replace_callback('/```ini+(.+)```/Us', function ($rs) use ($data) {
-            foreach (parse_ini_string($rs[1], true) as $k => $v) {
-                $data[$k] = $v;
-            }
+        $text = preg_replace_callback('/```ini+(.+)```/Us', function ($rs) use (&$data) {
+            $data = array_merge($data, parse_ini_string($rs[1]));
             return '';
         }, $text);
         // 解析内容
