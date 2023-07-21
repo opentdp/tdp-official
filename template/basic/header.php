@@ -14,10 +14,10 @@
 
 <!-- Vendor CSS Files -->
 <?php $this->need('assets/vendor/aos/aos.css'); ?>
-<?php $this->need('assets/vendor/bootstrap/css/bootstrap.min.css'); ?>
+<?php $this->need('assets/vendor/bootstrap/bootstrap.min.css'); ?>
 <?php $this->need('assets/vendor/bootstrap-icons/bootstrap-icons.min.css'); ?>
 <?php $this->need('assets/vendor/boxicons/css/boxicons.min.css'); ?>
-<?php $this->need('assets/vendor/glightbox/css/glightbox.min.css'); ?>
+<?php $this->need('assets/vendor/glightbox/glightbox.min.css'); ?>
 <?php $this->need('assets/vendor/remixicon/remixicon.css'); ?>
 <?php $this->need('assets/vendor/swiper/swiper-bundle.min.css'); ?>
 
