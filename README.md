@@ -1,5 +1,13 @@
 # OpenTDP 官方网站
 
+## 快速开始
+
+- 下载项目源码，上传到服务器
+
+- 构建缓存 `http://loclahost/index.php?rt=/admin/build`
+
+- 访问站点 `http://loclahost`
+
 ## 数据目录
 
 数据目录为 `dataset`，其中包含了 `meta.ini` 配置文件和 `x.md` 作品文件
