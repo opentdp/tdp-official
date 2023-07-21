@@ -2,11 +2,11 @@
 
 ## 快速开始
 
-- 下载项目源码，上传到服务器
+- 将项目源码上传到服务器
 
-- 构建缓存 `http://loclahost/index.php?rt=/admin/build`
+- 构建缓存 `http://example.com/?rt=/admin/build`
 
-- 访问站点 `http://loclahost`
+- 访问站点 `http://example.com`
 
 ## 数据目录
 
