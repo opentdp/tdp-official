@@ -47,4 +47,12 @@ class App
         }
         return $objs[$name];
     }
+
+    /**
+     * 从辅助类中调用方法
+     */
+    public static function __callStatic($name, $args)
+    {
+        return AppHelper::$name(...$args);
+    }
 }
