@@ -18,7 +18,7 @@ class BlogsModel extends BasicModel
 
     protected function get_blogs()
     {
-        $this->blogs = App::storage('blog/index');
+        $this->blogs = App::cache('blog/index');
         // 记录不存在
         if (!$this->blogs) {
             App::obtain('ErrorModel')->warning('%s not found', 'blog');

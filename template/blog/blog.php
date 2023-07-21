@@ -1,22 +1,22 @@
 <article class="blog-details">
 
     <div class="post-img">
-        <img src="<?= $this->blog->thumb; ?>" alt="" class="img-fluid">
+        <img src="<?= $this->blog['thumb']; ?>" alt="" class="img-fluid">
     </div>
 
     <h2 class="title">
-        <?= $this->blog->subject; ?>
+        <?= $this->blog['subject']; ?>
     </h2>
 
     <div class="meta-top">
         <ul>
             <li class="d-flex align-items-center">
                 <i class="bi bi-person"></i>
-                <a><?= $this->blog->author; ?></a>
+                <a><?= $this->blog['author']; ?></a>
             </li>
             <li class="d-flex align-items-center">
                 <i class="bi bi-clock"></i>
-                <a><time datetime="<?= $this->blog->time; ?>"><?= $this->blog->time; ?></time></a>
+                <a><time datetime="<?= $this->blog['time']; ?>"><?= $this->blog['time']; ?></time></a>
             </li>
             <li class="d-flex align-items-center">
                 <i class="bi bi-chat-dots"></i>
@@ -26,7 +26,7 @@
     </div>
 
     <div class="content">
-        <?= $this->blog->content; ?>
+        <?= $this->blog['content']; ?>
     </div>
 
     <div class="meta-bottom">
@@ -37,7 +37,7 @@
 
         <i class="bi bi-tags"></i>
         <ul class="tags">
-            <?php foreach (explode(',', $this->blog->tags) as $tag) { ?>
+            <?php foreach (explode(',', $this->blog['tags']) as $tag) { ?>
                 <li><a href="#"><?= $tag; ?></a></li>
             <?php } ?>
         </ul>

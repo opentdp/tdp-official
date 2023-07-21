@@ -12,17 +12,17 @@ class ArticleModel extends BasicModel
         $this->get_category($args['cid']);
         $this->get_article($args['aid']);
         // 设置模板变量
-        $this->title = $this->article->subject;
-        $this->keywords = $this->article->tags;
-        $this->description = $this->article->summary;
+        $this->title = $this->article['subject'];
+        $this->keywords = $this->article['tags'];
+        $this->description = $this->article['summary'];
         $this->breadcrumbs = [
-            ['title' => $this->category->title, 'url' => 'index.php?rt=/' . $this->category->id],
+            ['title' => $this->category['title'], 'url' => 'index.php?rt=/' . $this->category['id']],
         ];
     }
 
     protected function get_category($cid)
     {
-        $this->category = App::storage($cid . '/meta');
+        $this->category = App::cache($cid . '/meta');
         // 记录不存在
         if (!$this->category) {
             App::obtain('ErrorModel')->warning('%s not found', $cid);
@@ -31,7 +31,7 @@ class ArticleModel extends BasicModel
 
     protected function get_article($aid)
     {
-        $this->article = App::storage($this->category->id . '/' . $aid);
+        $this->article = App::cache($this->category['id'] . '/' . $aid);
         // 记录不存在
         if (!$this->article) {
             App::obtain('ErrorModel')->warning('%s not found', $aid);

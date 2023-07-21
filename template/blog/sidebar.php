@@ -27,12 +27,12 @@
         <div class="mt-3">
             <?php foreach ($this->blogs as $id => $item) { ?>
                 <div class="post-item mt-3">
-                    <img src="<?= $item->thumb; ?>" alt="">
+                    <img src="<?= $item['thumb']; ?>" alt="">
                     <div>
                         <h4>
-                            <a href="index.php?rt=/blog/<?= $id; ?>"><?= $item->subject; ?></a>
+                            <a href="index.php?rt=/blog/<?= $id; ?>"><?= $item['subject']; ?></a>
                         </h4>
-                        <time datetime="<?= $item->time; ?>"><?= $item->time; ?></time>
+                        <time datetime="<?= $item['time']; ?>"><?= $item['time']; ?></time>
                     </div>
                 </div>
             <?php } ?>

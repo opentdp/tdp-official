@@ -1,6 +1,6 @@
 <?php
 
-class Altorouter
+class AppRouter
 {
     /**
      * @var array Array of all routes (incl. named routes).
@@ -37,7 +37,7 @@ class Altorouter
      * @param array $matchTypes
      * @throws Exception
      */
-    public function __construct(array $routes = [], $basePath = '', array $matchTypes = [])
+    public function __construct($routes = [], $basePath = '', $matchTypes = [])
     {
         $this->addRoutes($routes);
         $this->setBasePath($basePath);
@@ -91,7 +91,7 @@ class Altorouter
      *
      * @param array $matchTypes The key is the name and the value is the regex.
      */
-    public function addMatchTypes(array $matchTypes)
+    public function addMatchTypes($matchTypes)
     {
         $this->matchTypes = array_merge($this->matchTypes, $matchTypes);
     }
@@ -107,7 +107,6 @@ class Altorouter
      */
     public function map($method, $route, $target, $name = null)
     {
-
         $this->routes[] = [$method, $route, $target, $name];
 
         if ($name) {
@@ -130,9 +129,8 @@ class Altorouter
      * @return string The URL of the route with named parameters in place.
      * @throws Exception
      */
-    public function generate($routeName, array $params = [])
+    public function generate($routeName, $params = [])
     {
-
         // Check if named route exists
         if (!isset($this->namedRoutes[$routeName])) {
             throw new RuntimeException("Route '{$routeName}' does not exist.");
@@ -176,7 +174,6 @@ class Altorouter
      */
     public function match($requestUrl = null, $requestMethod = null)
     {
-
         $params = [];
 
         // set Request Url if it isn't passed as parameter

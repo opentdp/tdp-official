@@ -3,10 +3,10 @@
         <div class="row d-flex align-items-center">
             <div class="col-lg-6 text-lg-start text-center">
                 <div class="copyright">
-                    &copy; 2022 - <?= date('Y'); ?> <strong><?= $this->site->copyright; ?></strong>. All Rights Reserved.
+                    &copy; 2022 - <?= date('Y'); ?> <strong><?= $this->site['copyright']; ?></strong>. All Rights Reserved.
                 </div>
                 <div class="credits">
-                    Powered by <a href="https://www.rehiy.com/" target="_blank">Rehiy</a>, <?= $this->site->credits; ?>.
+                    Powered by <a href="https://www.rehiy.com/" target="_blank">Rehiy</a>, <?= $this->site['credits']; ?>.
                 </div>
             </div>
             <div class="col-lg-6">

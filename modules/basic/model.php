@@ -14,7 +14,7 @@ class BasicModel
 
     public function __construct()
     {
-        $this->site = App::storage('meta');
+        $this->site = App::cache('meta');
     }
 
     public function __call($name, $args)
@@ -69,7 +69,7 @@ class BasicModel
         if (!is_array($this->title)) {
             $this->title = (array)$this->title;
         }
-        $this->title[] = $this->site->title;
+        $this->title[] = $this->site['title'];
         // 加载模板
         $file = APP_MODULES . $this->name . '/template.php';
         is_file($file) && include($file);

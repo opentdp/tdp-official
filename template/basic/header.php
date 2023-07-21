@@ -5,8 +5,8 @@
 <title><?= implode(' - ', $this->title);  ?></title>
 
 <!-- SEO Tags -->
-<meta content="<?= $this->keywords ?: $this->site->keywords; ?>" name="keywords">
-<meta content="<?= $this->description ?: $this->site->description; ?>" name="description">
+<meta content="<?= $this->keywords ?: $this->site['keywords']; ?>" name="keywords">
+<meta content="<?= $this->description ?: $this->site['description']; ?>" name="description">
 
 <!-- Favicons -->
 <link href="assets/img/icon.png" rel="icon">

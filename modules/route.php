@@ -1,14 +1,12 @@
 <?php
 
-$router = new Altorouter();
-
 // 路由形参
 
 $rtkeys = ['method' => '', 'route' => '', 'target' => '', 'name' => ''];
 
 // 默认首页
 
-$router->map('GET', '/', function ($args) {
+self::$router->map('GET', '/', function ($args) {
     $model = new HomeModel();
     $model->view($args);
     return $model;
@@ -16,7 +14,7 @@ $router->map('GET', '/', function ($args) {
 
 // 重建缓存
 
-$router->map('GET', '/admin/build', function ($args) {
+self::$router->map('GET', '/admin/build', function ($args) {
     $model = new AdminModel();
     $model->build($args);
     return $model;
@@ -24,11 +22,11 @@ $router->map('GET', '/admin/build', function ($args) {
 
 // 动态路由
 
-$index = App::storage('index');
+$index = App::cache('index');
 
 foreach ((array)$index as $item) {
-    foreach ($item->routes as $route) {
-        $router->map($route['method'], $route['route'], function ($args) use ($route, $rtkeys) {
+    foreach ($item['routes'] as $route) {
+        self::$router->map($route['method'], $route['route'], function ($args) use ($route, $rtkeys) {
             $extra = array_diff_key($route, $rtkeys);
             $model = new $route['target']();
             $model->view($args + $extra);
@@ -39,7 +37,7 @@ foreach ((array)$index as $item) {
 
 // 回退路由
 
-$router->map('GET', '*', function ($args) {
+self::$router->map('GET', '*', function ($args) {
     $model = new ErrorModel();
     $model->warning('not found', $args);
     return $model;

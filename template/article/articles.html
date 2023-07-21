@@ -4,30 +4,30 @@
         <?php foreach ($this->articles as $id => $item) { ?>
             <article class="row gy-4 mb-4">
                 <div class="col-lg-4 post-img">
-                    <img src="<?= $item->thumb; ?>" alt="" class="img-fluid">
+                    <img src="<?= $item['thumb']; ?>" alt="" class="img-fluid">
                 </div>
                 <div class="col-lg-8">
                     <h4 class="title">
-                        <a href="index.php?rt=/<?= $this->category->id; ?>/<?= $id; ?>"><?= $item->subject; ?></a>
+                        <a href="index.php?rt=/<?= $this->category['id']; ?>/<?= $id; ?>"><?= $item['subject']; ?></a>
                     </h4>
                     <div class="meta-top mb-2">
                         <ul>
                             <li class="d-flex align-items-center">
                                 <i class="bi bi-person"></i>
-                                <?= $item->author; ?>
+                                <?= $item['author']; ?>
                             </li>
                             <li class="d-flex align-items-center">
                                 <i class="bi bi-clock"></i>
-                                <time datetime="<?= $item->time; ?>"><?= $item->time; ?></time>
+                                <time datetime="<?= $item['time']; ?>"><?= $item['time']; ?></time>
                             </li>
                             <li class="d-flex align-items-center">
                                 <i class="bi bi-tags"></i>
-                                <?= $item->tags; ?>
+                                <?= $item['tags']; ?>
                             </li>
                         </ul>
                     </div>
                     <div class="summary">
-                        <p><?= $item->summary; ?></p>
+                        <p><?= $item['summary']; ?></p>
                     </div>
                 </div>
             </article>
