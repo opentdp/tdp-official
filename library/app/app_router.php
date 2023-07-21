@@ -68,9 +68,6 @@ class AppRouter
      */
     public function addRoutes($routes)
     {
-        if (!is_array($routes) && !$routes instanceof Traversable) {
-            throw new RuntimeException('Routes should be an array or an instance of Traversable');
-        }
         foreach ($routes as $route) {
             call_user_func_array([$this, 'map'], $route);
         }
@@ -115,8 +112,6 @@ class AppRouter
             }
             $this->namedRoutes[$name] = $route;
         }
-
-        return;
     }
 
     /**
@@ -132,8 +127,8 @@ class AppRouter
     public function generate($routeName, $params = [])
     {
         // Check if named route exists
-        if (!isset($this->namedRoutes[$routeName])) {
-            throw new RuntimeException("Route '{$routeName}' does not exist.");
+        if (empty($this->namedRoutes[$routeName])) {
+            throw new RuntimeException("Route '{$routeName}' does not exist");
         }
 
         // Replace named parameters

@@ -1,9 +1,5 @@
 <?php
 
-// 路由形参
-
-$rtkeys = ['method' => '', 'route' => '', 'target' => '', 'name' => ''];
-
 // 默认首页
 
 self::$router->map('GET', '/', function ($args) {
@@ -23,16 +19,16 @@ self::$router->map('GET', '/admin/build', function ($args) {
 // 动态路由
 
 $index = App::cache('index');
+$index = array_merge(...array_column($index, 'routes'));
+$rtkey = ['method' => '', 'route' => '', 'target' => '', 'name' => ''];
 
-foreach ((array)$index as $item) {
-    foreach ($item['routes'] as $route) {
-        self::$router->map($route['method'], $route['route'], function ($args) use ($route, $rtkeys) {
-            $extra = array_diff_key($route, $rtkeys);
-            $model = new $route['target']();
-            $model->view($args + $extra);
-            return $model;
-        });
-    }
+foreach ($index as $route) {
+    self::$router->map($route['method'], $route['route'], function ($args) use ($route, $rtkey) {
+        $extra = array_diff_key($route, $rtkey);
+        $model = new $route['target']();
+        $model->view($args + $extra);
+        return $model;
+    });
 }
 
 // 回退路由
