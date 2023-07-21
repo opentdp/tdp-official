@@ -27,13 +27,13 @@
 </a>
 
 <!-- Vendor JS Files -->
-<?php $this->need('assets/vendor/purecounter/purecounter_vanilla.js'); ?>
 <?php $this->need('assets/vendor/aos/aos.js'); ?>
 <?php $this->need('assets/vendor/bootstrap/js/bootstrap.bundle.min.js'); ?>
 <?php $this->need('assets/vendor/glightbox/js/glightbox.min.js'); ?>
 <?php $this->need('assets/vendor/isotope-layout/isotope.pkgd.min.js'); ?>
-<?php $this->need('assets/vendor/swiper/swiper-bundle.min.js'); ?>
 <?php $this->need('assets/vendor/php-email-form/validate.js'); ?>
+<?php $this->need('assets/vendor/purecounter/purecounter_vanilla.js'); ?>
+<?php $this->need('assets/vendor/swiper/swiper-bundle.min.js'); ?>
 
 <!-- Main JS File -->
 <?php $this->need('assets/js/main.js'); ?>
