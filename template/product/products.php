@@ -26,7 +26,8 @@
                             <h4><?= $item['name']; ?></h4>
                             <p><?= $item['summary']; ?></p>
                             <div class="product-links">
-                                <a href="<?= $item['thumb']; ?>" data-gallery="productGallery" class="product-lightbox" title="<?= $item['tags']; ?>">
+                                <?php $desc = "<p><b>标签</b>：{$item['tags']}</p><p><b>描述</b>：{$item['summary']}</p>"; ?>
+                                <a href="<?= $item['thumb']; ?>" class="product-lightbox" data-gallery="product-gallery" data-title="<?= $item['name']; ?>" data-description="<?= $desc; ?>">
                                     <i class="bx bx-plus"></i>
                                 </a>
                                 <a href="index.php?rt=/product/<?= $item['id']; ?>" title="产品详情">
