@@ -26,8 +26,12 @@
                         <h4>App 1</h4>
                         <p>App</p>
                         <div class="product-links">
-                            <a href="assets/img/product/thumb-1.jpg" data-gallery="productGallery" class="product-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                            <a href="index.php?rt=/product/1" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="assets/img/product/thumb-1.jpg" data-gallery="productGallery" class="product-lightbox" title="App 1">
+                                <i class="bx bx-plus"></i>
+                            </a>
+                            <a href="index.php?rt=/product/1" title="More Details">
+                                <i class="bx bx-link"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -40,8 +44,12 @@
                         <h4>Web 3</h4>
                         <p>Web</p>
                         <div class="product-links">
-                            <a href="assets/img/product/thumb-2.jpg" data-gallery="productGallery" class="product-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                            <a href="index.php?rt=/product/1" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="assets/img/product/thumb-2.jpg" data-gallery="productGallery" class="product-lightbox" title="Web 3">
+                                <i class="bx bx-plus"></i>
+                            </a>
+                            <a href="index.php?rt=/product/1" title="More Details">
+                                <i class="bx bx-link"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -54,8 +62,12 @@
                         <h4>App 2</h4>
                         <p>App</p>
                         <div class="product-links">
-                            <a href="assets/img/product/thumb-3.jpg" data-gallery="productGallery" class="product-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                            <a href="index.php?rt=/product/1" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="assets/img/product/thumb-3.jpg" data-gallery="productGallery" class="product-lightbox" title="App 2">
+                                <i class="bx bx-plus"></i>
+                            </a>
+                            <a href="index.php?rt=/product/1" title="More Details">
+                                <i class="bx bx-link"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -68,8 +80,12 @@
                         <h4>Card 2</h4>
                         <p>Card</p>
                         <div class="product-links">
-                            <a href="assets/img/product/thumb-4.jpg" data-gallery="productGallery" class="product-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                            <a href="index.php?rt=/product/1" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="assets/img/product/thumb-4.jpg" data-gallery="productGallery" class="product-lightbox" title="Card 2">
+                                <i class="bx bx-plus"></i>
+                            </a>
+                            <a href="index.php?rt=/product/1" title="More Details">
+                                <i class="bx bx-link"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -82,8 +98,12 @@
                         <h4>Web 2</h4>
                         <p>Web</p>
                         <div class="product-links">
-                            <a href="assets/img/product/thumb-5.jpg" data-gallery="productGallery" class="product-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                            <a href="index.php?rt=/product/1" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="assets/img/product/thumb-5.jpg" data-gallery="productGallery" class="product-lightbox" title="Web 2">
+                                <i class="bx bx-plus"></i>
+                            </a>
+                            <a href="index.php?rt=/product/1" title="More Details">
+                                <i class="bx bx-link"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -96,8 +116,12 @@
                         <h4>App 3</h4>
                         <p>App</p>
                         <div class="product-links">
-                            <a href="assets/img/product/thumb-6.jpg" data-gallery="productGallery" class="product-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                            <a href="index.php?rt=/product/1" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="assets/img/product/thumb-6.jpg" data-gallery="productGallery" class="product-lightbox" title="App 3">
+                                <i class="bx bx-plus"></i>
+                            </a>
+                            <a href="index.php?rt=/product/1" title="More Details">
+                                <i class="bx bx-link"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -110,8 +134,12 @@
                         <h4>Card 1</h4>
                         <p>Card</p>
                         <div class="product-links">
-                            <a href="assets/img/product/thumb-7.jpg" data-gallery="productGallery" class="product-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                            <a href="index.php?rt=/product/1" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="assets/img/product/thumb-7.jpg" data-gallery="productGallery" class="product-lightbox" title="Card 1">
+                                <i class="bx bx-plus"></i>
+                            </a>
+                            <a href="index.php?rt=/product/1" title="More Details">
+                                <i class="bx bx-link"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -124,8 +152,12 @@
                         <h4>Card 3</h4>
                         <p>Card</p>
                         <div class="product-links">
-                            <a href="assets/img/product/thumb-8.jpg" data-gallery="productGallery" class="product-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                            <a href="index.php?rt=/product/1" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="assets/img/product/thumb-8.jpg" data-gallery="productGallery" class="product-lightbox" title="Card 3">
+                                <i class="bx bx-plus"></i>
+                            </a>
+                            <a href="index.php?rt=/product/1" title="More Details">
+                                <i class="bx bx-link"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -138,8 +170,12 @@
                         <h4>Web 3</h4>
                         <p>Web</p>
                         <div class="product-links">
-                            <a href="assets/img/product/thumb-9.jpg" data-gallery="productGallery" class="product-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                            <a href="index.php?rt=/product/1" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="assets/img/product/thumb-9.jpg" data-gallery="productGallery" class="product-lightbox" title="Web 3">
+                                <i class="bx bx-plus"></i>
+                            </a>
+                            <a href="index.php?rt=/product/1" title="More Details">
+                                <i class="bx bx-link"></i>
+                            </a>
                         </div>
                     </div>
                 </div>

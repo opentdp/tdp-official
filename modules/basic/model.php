@@ -4,8 +4,7 @@ class BasicModel
 {
     protected $name = 'basic';
 
-    protected $site = null;
-
+    protected $site = [];
     protected $title = [];
     protected $keywords = '';
     protected $description = '';
@@ -19,7 +18,7 @@ class BasicModel
 
     public function __call($name, $args)
     {
-        App::obtain('ErrorModel')->warning('%s not found', $name);
+        App::obtain('ErrorModel')->warning('%s not found', $name, ...$args);
     }
 
     /**
@@ -51,19 +50,17 @@ class BasicModel
      * 输出请求结果
      * @return void
      */
-    public function output()
+    public function output($rewrite = false)
     {
         // 输出内容
         if (PHP_SAPI === 'cli') {
-            echo json_encode($this, 320);
-            exit;
+            exit(json_encode($this, 320));
         }
         // 输出JSON
         $accept = $_SERVER['HTTP_ACCEPT'] ?? '';
-        if (stripos($accept, 'application/json') !== false) {
+        if (stripos($accept, 'application/json') === 0) {
             header('Content-Type: application/json; charset=utf-8');
-            echo json_encode($this, 320);
-            exit;
+            exit(json_encode($this, 320));
         }
         // 修正标题
         if (!is_array($this->title)) {

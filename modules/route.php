@@ -8,6 +8,19 @@ self::$router->map('GET', '/', function ($args) {
     return $model;
 });
 
+// 动态路由
+
+foreach (App::cache('index') as $category) {
+    foreach ($category['routes'] as $route) {
+        $rt = $route + ['cid' => $category['id']];
+        self::$router->map($rt['method'], $rt['route'], function ($args) use ($rt) {
+            $model = new $rt['model'](); // 初始化模型
+            $model->{$rt['action']}($args);
+            return $model;
+        });
+    }
+}
+
 // 重建缓存
 
 self::$router->map('GET', '/admin/build', function ($args) {
@@ -16,25 +29,10 @@ self::$router->map('GET', '/admin/build', function ($args) {
     return $model;
 });
 
-// 动态路由
-
-$index = App::cache('index');
-$index = array_merge(...array_column($index, 'routes'));
-$rtkey = ['method' => '', 'route' => '', 'target' => '', 'name' => ''];
-
-foreach ($index as $route) {
-    self::$router->map($route['method'], $route['route'], function ($args) use ($route, $rtkey) {
-        $extra = array_diff_key($route, $rtkey);
-        $model = new $route['target']();
-        $model->view($args + $extra);
-        return $model;
-    });
-}
-
 // 回退路由
 
 self::$router->map('GET', '*', function ($args) {
-    $model = new ErrorModel();
+    $model = new ErrorModel($args);
     $model->warning('not found', $args);
     return $model;
 });
