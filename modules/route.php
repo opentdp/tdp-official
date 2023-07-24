@@ -8,6 +8,14 @@ self::$router->map('GET', '/', function ($args) {
     return $model;
 });
 
+// 重建缓存
+
+self::$router->map('GET', '/admin/build', function ($args) {
+    $model = new AdminModel();
+    $model->build($args);
+    return $model;
+});
+
 // 动态路由
 
 foreach (App::cache('index') as $category) {
@@ -20,14 +28,6 @@ foreach (App::cache('index') as $category) {
         });
     }
 }
-
-// 重建缓存
-
-self::$router->map('GET', '/admin/build', function ($args) {
-    $model = new AdminModel();
-    $model->build($args);
-    return $model;
-});
 
 // 回退路由
 
