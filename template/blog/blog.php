@@ -1,5 +1,4 @@
-<article class="blog-details">
-
+<article id="blog" class="blog-details">
     <div class="post-img">
         <img src="<?= $this->blog['thumb']; ?>" alt="" class="img-fluid">
     </div>
@@ -42,7 +41,6 @@
             <?php } ?>
         </ul>
     </div>
-
 </article>
 
 <div class="post-author d-flex align-items-center">

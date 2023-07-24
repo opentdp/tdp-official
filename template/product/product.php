@@ -1,22 +1,22 @@
-<section id="portfolio-details" class="portfolio-details">
+<section id="product-details" class="product-details">
     <div class="container">
 
         <div class="row gy-4">
 
             <div class="col-lg-8">
-                <div class="portfolio-details-slider swiper">
+                <div class="product-details-slider swiper">
                     <div class="swiper-wrapper align-items-center">
 
                         <div class="swiper-slide">
-                            <img src="assets/img/product/details-1.jpg" alt="">
+                            <img src="assets/img/product/1/details-1.jpg" alt="">
                         </div>
 
                         <div class="swiper-slide">
-                            <img src="assets/img/product/details-2.jpg" alt="">
+                            <img src="assets/img/product/1/details-2.jpg" alt="">
                         </div>
 
                         <div class="swiper-slide">
-                            <img src="assets/img/product/details-3.jpg" alt="">
+                            <img src="assets/img/product/1/details-3.jpg" alt="">
                         </div>
 
                     </div>
@@ -25,7 +25,7 @@
             </div>
 
             <div class="col-lg-4">
-                <div class="portfolio-info">
+                <div class="product-info">
                     <h3>产品信息</h3>
                     <ul>
                         <li><strong>名称</strong>: TDP Cloud</li>
@@ -34,7 +34,7 @@
                         <li><strong>演示地址</strong>: <a href="https://cloud.opentdp.org">cloud.opentdp.org</a></li>
                     </ul>
                 </div>
-                <div class="portfolio-description">
+                <div class="product-description">
                     <h2>可以跨平台部署的云资源管理面板</h2>
                     <p>支持管理多个云账号资源</p>
                     <p>支持添加子节点 (TDP Worker)</p>

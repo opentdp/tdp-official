@@ -1,5 +1,4 @@
 <article class="article-details">
-
     <div class="meta-top mb-4">
         <ul>
             <li class="d-flex align-items-center">
@@ -20,5 +19,4 @@
     <div class="content mb-4">
         <?= $this->article['content']; ?>
     </div>
-
 </article>

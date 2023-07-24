@@ -1,19 +1,19 @@
 /*--------------------------------------------------------------
-# Portfolio
+# Product
 --------------------------------------------------------------*/
 
-.portfolio .portfolio-item {
+.product .product-item {
     margin-bottom: 30px;
 }
 
-.portfolio #portfolio-flters {
+.product #product-flters {
     padding: 0;
     margin: 0 auto 20px auto;
     list-style: none;
     text-align: center;
 }
 
-.portfolio #portfolio-flters li {
+.product #product-flters li {
     cursor: pointer;
     display: inline-block;
     padding: 8px 15px 10px 15px;
@@ -27,17 +27,17 @@
     border-radius: 3px;
 }
 
-.portfolio #portfolio-flters li:hover,
-.portfolio #portfolio-flters li.filter-active {
+.product #product-flters li:hover,
+.product #product-flters li.filter-active {
     color: #fff;
     background: #3498db;
 }
 
-.portfolio #portfolio-flters li:last-child {
+.product #product-flters li:last-child {
     margin-right: 0;
 }
 
-.portfolio .portfolio-wrap {
+.product .product-wrap {
     transition: 0.3s;
     position: relative;
     overflow: hidden;
@@ -45,7 +45,7 @@
     background: rgba(34, 34, 34, 0.6);
 }
 
-.portfolio .portfolio-wrap::before {
+.product .product-wrap::before {
     content: "";
     background: rgba(34, 34, 34, 0.6);
     position: absolute;
@@ -58,11 +58,11 @@
     opacity: 0;
 }
 
-.portfolio .portfolio-wrap img {
+.product .product-wrap img {
     transition: all ease-in-out 0.3s;
 }
 
-.portfolio .portfolio-wrap .portfolio-info {
+.product .product-wrap .product-info {
     opacity: 0;
     position: absolute;
     top: 0;
@@ -78,13 +78,13 @@
     padding: 20px;
 }
 
-.portfolio .portfolio-wrap .portfolio-info h4 {
+.product .product-wrap .product-info h4 {
     font-size: 20px;
     color: #fff;
     font-weight: 600;
 }
 
-.portfolio .portfolio-wrap .portfolio-info p {
+.product .product-wrap .product-info p {
     color: rgba(255, 255, 255, 0.7);
     font-size: 14px;
     text-transform: uppercase;
@@ -93,12 +93,12 @@
     font-style: italic;
 }
 
-.portfolio .portfolio-wrap .portfolio-links {
+.product .product-wrap .product-links {
     text-align: center;
     z-index: 4;
 }
 
-.portfolio .portfolio-wrap .portfolio-links a {
+.product .product-wrap .product-links a {
     color: #fff;
     margin: 0 5px 0 0;
     font-size: 28px;
@@ -106,40 +106,40 @@
     transition: 0.3s;
 }
 
-.portfolio .portfolio-wrap .portfolio-links a:hover {
+.product .product-wrap .product-links a:hover {
     color: #3498db;
 }
 
-.portfolio .portfolio-wrap:hover::before {
+.product .product-wrap:hover::before {
     opacity: 1;
 }
 
-.portfolio .portfolio-wrap:hover img {
+.product .product-wrap:hover img {
     transform: scale(1.2);
 }
 
-.portfolio .portfolio-wrap:hover .portfolio-info {
+.product .product-wrap:hover .product-info {
     opacity: 1;
 }
 
 /*--------------------------------------------------------------
- # Portfolio Details
+ # Product Details
  --------------------------------------------------------------*/
 
-.portfolio-details {
+.product-details {
     padding-top: 40px;
 }
 
-.portfolio-details .portfolio-details-slider img {
+.product-details .product-details-slider img {
     width: 100%;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination {
+.product-details .product-details-slider .swiper-pagination {
     margin-top: 20px;
     position: relative;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+.product-details .product-details-slider .swiper-pagination .swiper-pagination-bullet {
     width: 12px;
     height: 12px;
     background-color: #fff;
@@ -147,16 +147,16 @@
     border: 1px solid #3498db;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+.product-details .product-details-slider .swiper-pagination .swiper-pagination-bullet-active {
     background-color: #3498db;
 }
 
-.portfolio-details .portfolio-info {
+.product-details .product-info {
     padding: 30px;
     box-shadow: 0px 0 30px rgba(34, 34, 34, 0.08);
 }
 
-.portfolio-details .portfolio-info h3 {
+.product-details .product-info h3 {
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 20px;
@@ -164,26 +164,26 @@
     border-bottom: 1px solid #eee;
 }
 
-.portfolio-details .portfolio-info ul {
+.product-details .product-info ul {
     list-style: none;
     padding: 0;
     font-size: 15px;
 }
 
-.portfolio-details .portfolio-info ul li+li {
+.product-details .product-info ul li+li {
     margin-top: 10px;
 }
 
-.portfolio-details .portfolio-description {
+.product-details .product-description {
     padding-top: 30px;
 }
 
-.portfolio-details .portfolio-description h2 {
+.product-details .product-description h2 {
     font-size: 26px;
     font-weight: 700;
     margin-bottom: 20px;
 }
 
-.portfolio-details .portfolio-description p {
+.product-details .product-description p {
     padding: 0;
 }

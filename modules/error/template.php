@@ -10,7 +10,8 @@
     <?php $this->need('basic/loader.php'); ?>
     <?php $this->need('basic/navbar.php'); ?>
     <main id="main">
-        <?= $this->content ?>
+        <?php $this->need('widget/breadcrumb.php'); ?>
+        <?php $this->need('error/message.php'); ?>
     </main>
     <?php $this->need('basic/footer.php'); ?>
 </body>
