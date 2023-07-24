@@ -15,7 +15,7 @@ foreach (App::cache('index') as $category) {
         $rt = $route + ['cid' => $category['id']];
         self::$router->map($rt['method'], $rt['route'], function ($args) use ($rt) {
             $model = new $rt['model'](); // 初始化模型
-            $model->{$rt['action']}($args);
+            $model->{$rt['action']}($rt + $args);
             return $model;
         });
     }
