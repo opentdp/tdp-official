@@ -11,7 +11,9 @@
             </li>
             <li class="d-flex align-items-center">
                 <i class="bi bi-tags"></i>
-                <?= $this->article['tags']; ?>
+                <?php foreach (explode(',', $this->article['tags']) as $tag) { ?>
+                    <i><?= $tag; ?></i>
+                <?php } ?>
             </li>
         </ul>
     </div>

@@ -8,7 +8,11 @@
                         <div class="post-img">
                             <img src="<?= $item['thumb']; ?>" alt="" class="img-fluid">
                         </div>
-                        <p class="post-category"><?= $item['tags']; ?></p>
+                        <p class="post-category">
+                            <?php foreach (explode(',', $item['tags']) as $tag) { ?>
+                                <i><?= $tag; ?></i>
+                            <?php } ?>
+                        </p>
                         <h4 class="title">
                             <a href="index.php?rt=/blog/<?= $id; ?>"><?= $item['subject']; ?></a>
                         </h4>

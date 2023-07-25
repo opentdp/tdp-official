@@ -22,7 +22,9 @@
                             </li>
                             <li class="d-flex align-items-center">
                                 <i class="bi bi-tags"></i>
-                                <?= $item['tags']; ?>
+                                <?php foreach (explode(',', $item['tags']) as $tag) { ?>
+                                    <i><?= $tag; ?></i>
+                                <?php } ?>
                             </li>
                         </ul>
                     </div>

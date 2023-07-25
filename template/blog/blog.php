@@ -37,7 +37,7 @@
         <i class="bi bi-tags"></i>
         <ul class="tags">
             <?php foreach (explode(',', $this->blog['tags']) as $tag) { ?>
-                <li><a href="#"><?= $tag; ?></a></li>
+                <li><i><?= $tag; ?></i></li>
             <?php } ?>
         </ul>
     </div>

@@ -10,9 +10,16 @@ class AdminModel extends BasicModel
      */
     public function build()
     {
-        $rs = $this->build_meta();
-        foreach ($rs as $cate => $meta) {
-            $this->build_index($cate);
+        $metadata = $this->build_meta();
+        foreach ($metadata as $cid => $meta) {
+            $meta['tags'] = [];
+            $list = $this->build_index($cid);
+            foreach ($list as $item) {
+                foreach (explode(',', $item['tags']) as $k) {
+                    $meta['tags'][$k][] = $item['id'];
+                }
+            }
+            App::cache($cid . '/meta', $meta);
         }
     }
 
