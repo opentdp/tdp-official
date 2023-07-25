@@ -26,17 +26,17 @@
             <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200">
                 <div class="info">
                     <div>
-                        <i class="ri-map-pin-line"></i>
+                        <i class="bi bi-pin-map-fill"></i>
                         <p>Beijing, China</p>
                     </div>
 
                     <div>
-                        <i class="ri-phone-line"></i>
+                        <i class="bi bi-telephone"></i>
                         <p>+1(570)599-6699</p>
                     </div>
 
                     <div>
-                        <i class="ri-mail-send-line"></i>
+                        <i class="bi bi-mailbox"></i>
                         <p>dev@opentdp.org</p>
                     </div>
 

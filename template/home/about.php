@@ -9,9 +9,9 @@
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
                 <p>OpenTDP 是一个源自于腾讯云开发者先锋（TDP）的自由开源技术组织，首批开发者及用户均来自于 TDP 群。我们致力于提供云端前沿应用：</p>
                 <ul>
-                    <li><i class="ri-check-double-line"></i> TDP-Cloud 多云资源管理系统</li>
-                    <li><i class="ri-check-double-line"></i> TDP-Aiart 人工智能艺术平台</li>
-                    <li><i class="ri-check-double-line"></i> Go-Libcloud 跨云平台接口类</li>
+                    <li><i class="bi bi-check2-all"></i> TDP-Cloud 多云资源管理系统</li>
+                    <li><i class="bi bi-check2-all"></i> TDP-Aiart 人工智能艺术平台</li>
+                    <li><i class="bi bi-check2-all"></i> Go-Libcloud 跨云平台接口类</li>
                 </ul>
             </div>
             <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="300">
