@@ -28,20 +28,19 @@ class BasicModel
      */
     public function need($name)
     {
-        $version = time();
+        $version = $this->site['version'];
         switch (pathinfo($name, PATHINFO_EXTENSION)) {
             case 'php':
                 require(APP_TEMPLATE . $name);
                 break;
             case 'css':
-                $v = time();
-                printf('<link href="%s?t%d" rel="stylesheet">', $name, $version);
+                printf('<link href="%s?v%s" rel="stylesheet">', $name, $version);
                 break;
             case  'js':
-                printf('<script src="%s?t%d"></script>', $name, $version);
+                printf('<script src="%s?v%s"></script>', $name, $version);
                 break;
             default:
-                printf('<!--not support %s-->', $name);
+                printf('<!--not support %s?v%s-->', $name, $version);
                 break;
         }
     }
