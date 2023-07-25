@@ -20,5 +20,5 @@
 <?php $this->need('assets/vendor/remixicon/remixicon.css'); ?>
 <?php $this->need('assets/vendor/swiper/swiper-bundle.min.css'); ?>
 
-<!-- Main CSS File -->
-<?php $this->need('assets/css/global.css'); ?>
+<!-- Global CSS File -->
+<?php $this->need('assets/style/global.css'); ?>

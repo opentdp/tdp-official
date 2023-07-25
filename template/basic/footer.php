@@ -35,5 +35,5 @@
 <?php $this->need('assets/vendor/purecounter/purecounter_vanilla.js'); ?>
 <?php $this->need('assets/vendor/swiper/swiper-bundle.min.js'); ?>
 
-<!-- Main JS File -->
-<?php $this->need('assets/js/main.js'); ?>
+<!-- Global JS File -->
+<?php $this->need('assets/style/global.js'); ?>

@@ -3,7 +3,7 @@
 
 <head>
     <?php $this->need('basic/header.php'); ?>
-    <?php $this->need('assets/css/home.css'); ?>
+    <?php $this->need('assets/style/home.css'); ?>
 </head>
 
 <body>
