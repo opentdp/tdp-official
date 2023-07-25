@@ -12,7 +12,7 @@ class ArticleModel extends BasicModel
         $this->get_category($args['cid']);
         $this->get_article($args['aid']);
         // 设置模板变量
-        $this->title = $this->article['subject'];
+        $this->title = $this->article['title'];
         $this->keywords = $this->article['tags'];
         $this->description = $this->article['summary'];
         $this->breadcrumbs = [

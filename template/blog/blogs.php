@@ -14,7 +14,7 @@
                             <?php } ?>
                         </p>
                         <h4 class="title">
-                            <a href="index.php?rt=/blog/<?= $id; ?>"><?= $item['subject']; ?></a>
+                            <a href="index.php?rt=/blog/<?= $id; ?>"><?= $item['title']; ?></a>
                         </h4>
                         <div class="d-flex align-items-center">
                             <img src="assets/img/blog/author-6.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">

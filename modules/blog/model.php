@@ -12,7 +12,7 @@ class BlogModel extends BasicModel
         $this->get_blogs();
         $this->get_blog($args['bid']);
         // 设置模板变量
-        $this->title = $this->blog['subject'];
+        $this->title = $this->blog['title'];
         $this->keywords = $this->blog['tags'];
         $this->description = $this->blog['summary'];
         $this->breadcrumbs = [

@@ -12,7 +12,7 @@ class ProductModel extends BasicModel
         $this->get_category($args['cid']);
         $this->get_product($args['pid']);
         // 设置模板变量
-        $this->title = $this->product['subject'];
+        $this->title = $this->product['title'];
         $this->keywords = $this->product['tags'];
         $this->description = $this->product['summary'];
         $this->breadcrumbs = [

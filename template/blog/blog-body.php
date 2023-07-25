@@ -4,7 +4,7 @@
     </div>
 
     <h2 class="title">
-        <?= $this->blog['subject']; ?>
+        <?= $this->blog['title']; ?>
     </h2>
 
     <div class="meta-top">

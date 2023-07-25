@@ -15,7 +15,7 @@
         <?php $this->need('home/about.php'); ?>
         <?php $this->need('home/counts.php'); ?>
         <?php $this->need('home/services.php'); ?>
-        <?php $this->need('home/articles.php'); ?>
+        <?php $this->need('home/news.php'); ?>
         <?php $this->need('home/features.php'); ?>
         <?php $this->need('home/team.php'); ?>
         <?php $this->need('home/contact.php'); ?>

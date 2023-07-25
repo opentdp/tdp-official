@@ -77,7 +77,7 @@ class AdminModel extends BasicModel
         $text = trim(file_get_contents($file));
         // 解析标题
         $text = preg_replace_callback('/^#\s(.+)[\r\n]+/U', function ($rs) use (&$data) {
-            $data['subject'] = trim($rs[1]);
+            $data['title'] = trim($rs[1]);
             return '';
         }, $text);
         // 解析属性

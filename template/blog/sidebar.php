@@ -30,7 +30,7 @@
                     <img src="<?= $item['thumb']; ?>" alt="">
                     <div>
                         <h4>
-                            <a href="index.php?rt=/blog/<?= $id; ?>"><?= $item['subject']; ?></a>
+                            <a href="index.php?rt=/blog/<?= $id; ?>"><?= $item['title']; ?></a>
                         </h4>
                         <time datetime="<?= $item['time']; ?>"><?= $item['time']; ?></time>
                     </div>
