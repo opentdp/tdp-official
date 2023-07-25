@@ -28,10 +28,10 @@
                             <div class="product-links">
                                 <?php $desc = "<p><b>标签</b>：{$item['tags']}</p><p><b>描述</b>：{$item['summary']}</p>"; ?>
                                 <a href="<?= $item['thumb']; ?>" class="product-lightbox" data-gallery="product-gallery" data-title="<?= $item['name']; ?>" data-description="<?= $desc; ?>">
-                                    <i class="bx bx-plus"></i>
+                                    <i class="bi bi-info"></i>
                                 </a>
                                 <a href="index.php?rt=/product/<?= $item['id']; ?>" title="产品详情">
-                                    <i class="bx bx-link"></i>
+                                    <i class="bi bi-link"></i>
                                 </a>
                             </div>
                         </div>
