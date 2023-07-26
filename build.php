@@ -25,8 +25,9 @@ $phar->stopBuffering();
 $index = <<<PHP
 <?php
 extension_loaded('phar') || exit('Phar extension is required!');
-define('APP_DATASET', __DIR__ . './dataset/');
-define('APP_RUNTIME', __DIR__ . './runtime/');
+define('APP_WEBROOT', strtr(__DIR__, '\\', '/') . '/');
+define('APP_DATASET', APP_WEBROOT . 'dataset/');
+define('APP_RUNTIME', APP_WEBROOT . 'runtime/');
 require 'phar://$tdpcms';
 PHP;
 
