@@ -539,6 +539,27 @@
  # Contact
 --------------------------------------------------------------*/
 
+.contact .info {
+    color: #444444;
+}
+
+.contact .info i {
+    font-size: 32px;
+    color: #3498db;
+    float: left;
+    line-height: 1;
+}
+
+.contact .info p {
+    padding: 0 0 10px 42px;
+    line-height: 28px;
+    font-size: 14px;
+}
+
+.contact .info .image {
+    max-width: 75%;
+}
+
 .contact .contact-about h3 {
     font-size: 28px;
     margin: 0 0 10px 0;
@@ -579,27 +600,6 @@
 .contact .social-links a:hover {
     background: #3498db;
     color: #fff;
-}
-
-.contact .info {
-    color: #444444;
-}
-
-.contact .info i {
-    font-size: 32px;
-    color: #3498db;
-    float: left;
-    line-height: 1;
-}
-
-.contact .info p {
-    padding: 0 0 10px 42px;
-    line-height: 28px;
-    font-size: 14px;
-}
-
-.contact .info .image {
-    max-width: 75%;
 }
 
 .contact .php-email-form .error-message {
