@@ -1,6 +1,6 @@
 <?php
 
-$tdpcms = 'tdpcms.phar';
+$tdpcms = 'kernel.phar';
 $target = strtr(__DIR__, '\\', '/') . '/tdpcms/';
 
 PHP_SAPI == 'cli' || exit('Please run in CLI mode');
