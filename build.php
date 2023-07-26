@@ -1,7 +1,7 @@
 <?php
 
 $tdpcms = 'tdpcms.phar';
-$target = strtr(__DIR__, '\\', '/') . '/build/';
+$target = strtr(__DIR__, '\\', '/') . '/tdpcms/';
 
 PHP_SAPI == 'cli' || exit('Please run in CLI mode');
 
