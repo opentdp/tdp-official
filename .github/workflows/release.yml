@@ -22,7 +22,7 @@ jobs:
           ini-values: memory_limit=1G, phar.readonly=0
 
       - name: Build go binary
-        run: php build.php
+        run: php build.php && tar czvf tdpcms.tar.gz ./build --strip-components=1
 
       - name: Create github release
         uses: softprops/action-gh-release@v1
@@ -32,4 +32,4 @@ jobs:
           draft: false
           prerelease: false
           files: |
-            ./build/*
+            ./tdpcms.tar.gz
