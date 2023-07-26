@@ -3,22 +3,25 @@
 class App
 {
     /**
-     * @var AppRouter $router
-     */
-    public static $router;
-
-    /**
      * 启动指定模块
      * @param string $url
      * @return void
      */
     public static function boot($url)
     {
-        // 注册页面路由器
-        self::$router = new AppRouter();
-        require APP_MODULES . 'route.php';
-        $match = self::$router->match($url ?: '/');
-        call_user_func($match['target'], $match['params'])->output();
+        $router = new AppRouter();
+        if (is_file(APP_MODULES . 'route.php')) {
+            require APP_MODULES . 'route.php';
+        }
+        // 回退路由
+        $router->map('GET', '*', function ($args) {
+            $model = new ErrorModel($args);
+            $model->warning('not found', $args);
+            return $model;
+        });
+        // 匹配路由
+        $request = $router->match($url ?: '/');
+        $request['target']($request['params'])->output();
     }
 
     /**
