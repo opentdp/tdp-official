@@ -81,8 +81,8 @@ class AdminModel extends BasicModel
             return '';
         }, $text);
         // 解析属性
-        $text = preg_replace_callback('/```ini+(.+)```/Us', function ($rs) use (&$data) {
-            $data = array_merge($data, parse_ini_string($rs[1]));
+        $text = preg_replace_callback('/```ini(.+)```/Us', function ($rs) use (&$data) {
+            $data = array_merge($data, parse_ini_string($rs[1], true));
             return '';
         }, $text);
         // 解析内容
