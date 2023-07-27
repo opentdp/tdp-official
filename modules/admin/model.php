@@ -15,6 +15,9 @@ class AdminModel extends BasicModel
             $meta['tags'] = [];
             $list = $this->build_index($cid);
             foreach ($list as $item) {
+                if (empty($item['tags'])) {
+                    continue;
+                }
                 foreach (explode(',', $item['tags']) as $k) {
                     $meta['tags'][$k][] = $item['id'];
                 }
@@ -90,7 +93,7 @@ class AdminModel extends BasicModel
             $data['content'] = App::obtain('ParsedownExtraToc')->text($text);
         }
         // 获取摘要
-        if ($data['content'] && !$data['summary']) {
+        if (isset($data['content']) && empty($data['summary'])) {
             $data['summary'] = strip_tags($data['content']);
             if (mb_strlen($data['summary']) > 60) {
                 $data['summary'] = mb_substr($data['summary'], 0, 60) . '...';

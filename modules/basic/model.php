@@ -14,6 +14,9 @@ class BasicModel
     public function __construct()
     {
         $this->site = App::cache('meta');
+        if ($this->site['rewrite'] > 0) {
+            ob_start(); // 开启输出缓冲
+        }
     }
 
     public function __call($name, $args)
@@ -69,6 +72,11 @@ class BasicModel
         // 加载模板
         $file = APP_MODULES . $this->name . '/template.php';
         is_file($file) && include($file);
+        // 伪静态化
+        if ($this->site['rewrite'] > 0) {
+            $html = ob_get_clean();
+            echo preg_replace('/\/?index.php\?rt=/Ui', '', $html);
+        }
         exit;
     }
 }

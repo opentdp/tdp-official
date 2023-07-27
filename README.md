@@ -26,12 +26,38 @@
 
 - 首个 `ini` 代码块内容为作品的属性数据，格式参阅 [配置文件](#配置文件)
 
+## 伪静态规则
+
+- `nginx` 伪静态规则
+
+```nginx
+location / {
+   if (!-e $request_filename){
+      rewrite ^/(.*)$ /index.php?rt=$1 last;
+   }
+}
+```
+
+- `apache` 伪静态规则
+
+```apache
+<IfModule mod_rewrite.c>
+    Options +FollowSymlinks
+    RewriteEngine On
+  
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+  
+    RewriteRule ^(.*)$ index.php?rt=$1 [QSA,PT,L]
+</IfModule>
+```
+
 ## 微信交流群
 
-扫码添加开发者好友（请备注 `Open TDP`，不备注可能无法通过好友申请）
+扫码添加开发者好友（请备注 `OpenTDP`，不备注可能无法通过好友申请）
 
 ![扫码添加好友](https://docs.opentdp.org/static/weixin-qr.jpg)
 
 ## 其他
 
-Copyright (c) 2022 - 2023 Open TDP
+Copyright (c) 2022 - 2023 OpenTDP
