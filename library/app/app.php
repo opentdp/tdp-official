@@ -14,10 +14,9 @@ class App
             require APP_MODULES . 'route.php';
         }
         // 回退路由
-        $router->map('GET', '*', function ($args) {
-            $model = new ErrorModel($args);
-            $model->warning('not found', $args);
-            return $model;
+        $router->map('GET', '*', function () {
+            header('HTTP/1.1 404 Not Found');
+            AppHelper::message('请求的页面不存在', 'info');
         });
         // 匹配路由
         $request = $router->match($url ?: '/');

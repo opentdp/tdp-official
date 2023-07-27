@@ -26,7 +26,7 @@ class AppRouter
         'h'  => '[0-9A-Fa-f]++',
         '*'  => '.+?',
         '**' => '.++',
-        ''   => '[^/\.]++'
+        ''   => '[^/\.]++',
     ];
 
     /**
@@ -195,7 +195,7 @@ class AppRouter
         foreach ($this->routes as $handler) {
             list($methods, $route, $target, $name) = $handler;
 
-            $method_match = (stripos($methods, $requestMethod) !== false);
+            $method_match = stripos($methods, $requestMethod) !== false;
 
             // Method did not match, continue to next route.
             if (!$method_match) {
@@ -218,7 +218,6 @@ class AppRouter
                 if (strncmp($requestUrl, $route, $position) !== 0 && ($lastRequestUrlChar === '/' || $route[$position - 1] !== '/')) {
                     continue;
                 }
-
                 $regex = $this->compileRoute($route);
                 $match = preg_match($regex, $requestUrl, $params) === 1;
             }
