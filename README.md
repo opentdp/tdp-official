@@ -4,8 +4,6 @@
 
 - 将项目源码上传到服务器
 
-- 构建缓存 `http://example.com/?rt=/admin/build`
-
 - 访问站点 `http://example.com`
 
 ## 数据目录

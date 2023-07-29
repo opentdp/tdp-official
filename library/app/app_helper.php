@@ -12,7 +12,7 @@ class AppHelper
     {
         //读取数据存储
         if ($data === true) {
-            return is_file($file) ? include($file) : [];
+            return is_file($file) ? include($file) : null;
         }
         //读取有效数据
         if (is_numeric($data)) {

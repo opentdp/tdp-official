@@ -33,8 +33,9 @@ class AdminModel extends BasicModel
     protected function build_meta()
     {
         $index = [];
-        $fpath = APP_DATASET . '{,*/}meta.ini';
-        foreach ((array)glob($fpath, GLOB_BRACE) as $file) {
+        $files = (array)glob(APP_DATASET . '*/meta.ini');
+        array_unshift($files, APP_DATASET . 'meta.ini');
+        foreach ($files as $file) {
             $rs = parse_ini_file($file, true);
             $rs['id'] = dirname(str_replace(APP_DATASET, '', $file));
             // 添加到索引
@@ -53,8 +54,8 @@ class AdminModel extends BasicModel
     protected function build_index($cate)
     {
         $index = [];
-        $fpath = APP_DATASET . $cate . '/*.md';
-        foreach ((array)glob($fpath, GLOB_BRACE) as $file) {
+        $files = (array)glob(APP_DATASET . $cate . '/*.md');
+        foreach ($files as $file) {
             $rs = $this->md_parse($file);
             $rs['id'] = basename($file, '.md');
             // 添加到索引

@@ -10,6 +10,7 @@ class App
     public static function boot($url)
     {
         $router = new AppRouter();
+        // 模块路由
         if (is_file(APP_MODULES . 'route.php')) {
             require APP_MODULES . 'route.php';
         }
