@@ -18,13 +18,16 @@ $router->map('GET', '/admin/build', function ($args) {
 
 // 动态路由
 
-foreach (App::cache('index') as $category) {
-    foreach ($category['routes'] as $route) {
-        $rt = $route + ['cid' => $category['id']];
-        $router->map($rt['method'], $rt['route'], function ($args) use ($rt) {
-            $model = new $rt['model'](); // 初始化模型
-            $model->{$rt['action']}($rt + $args);
-            return $model;
-        });
+$index = App::cache('index');
+if (is_array($index) && count($index) > 0) {
+    foreach ($index as $category) {
+        foreach ($category['routes'] as $route) {
+            $rt = $route + ['cid' => $category['id']];
+            $router->map($rt['method'], $rt['route'], function ($args) use ($rt) {
+                $model = new $rt['model'](); // 初始化模型
+                $model->{$rt['action']}($rt + $args);
+                return $model;
+            });
+        }
     }
 }

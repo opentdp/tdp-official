@@ -8,16 +8,16 @@ class AppHelper
      * @param mixed $data
      * @return mixed
      */
-    public static function storage($file, $data = true)
+    public static function storage($file, $data = null)
     {
         //读取数据存储
-        if ($data === true) {
+        if ($data === null) {
             return is_file($file) ? include($file) : null;
         }
         //读取有效数据
         if (is_numeric($data)) {
             $time = is_file($file) ? filemtime($file) : 0;
-            return $time > $data ? self::storage($name) : false;
+            return $time > $data ? self::storage($file) : null;
         }
         //写入数据存储
         $sdir = dirname($file);
