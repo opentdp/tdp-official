@@ -3,15 +3,15 @@
 // 默认首页
 
 $router->map('GET', '/', function ($args) {
-    $model = new HomeModel();
+    $model = App::obtain('HomeModel');
     $model->view($args);
     return $model;
 });
 
 // 重建缓存
 
-$router->map('GET', '/admin/build', function ($args) {
-    $model = new AdminModel();
+$router->map('GET', '/runtime/build', function ($args) {
+    $model = App::obtain('RuntimeModel');
     $model->build($args);
     return $model;
 });
@@ -24,7 +24,7 @@ if (is_array($index) && count($index) > 0) {
         foreach ($category['routes'] as $route) {
             $rt = $route + ['cid' => $category['id']];
             $router->map($rt['method'], $rt['route'], function ($args) use ($rt) {
-                $model = new $rt['model'](); // 初始化模型
+                $model = App::obtain($rt['model']); // 初始化模型
                 $model->{$rt['action']}($rt + $args);
                 return $model;
             });

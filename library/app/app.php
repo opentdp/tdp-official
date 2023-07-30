@@ -30,7 +30,7 @@ class App
      * @param mixed $data
      * @return mixed
      */
-    public static function cache($name, $data = true)
+    public static function cache($name, $data = null)
     {
         $file = APP_RUNTIME . 'cache/' . $name . '.php';
         return AppHelper::storage($file, $data);

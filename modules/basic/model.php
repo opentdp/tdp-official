@@ -14,12 +14,15 @@ class BasicModel
 
     public function __construct()
     {
-        $this->site = App::cache('meta') ?: [];
+        $this->site = App::cache('meta');
+        if (empty($this->site)) {
+            AppHelper::message('site metadata loss', 'warning');
+        }
     }
 
     public function __call($name, $args)
     {
-        App::obtain('ErrorModel')->warning('%s not found', $name, ...$args);
+        AppHelper::message(sprintf('%s not found', $name), 'warning');
     }
 
     /**
