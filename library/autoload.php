@@ -43,14 +43,14 @@ spl_autoload_register(function ($name) {
     }
 });
 
-// 注册错误处理函数
-
-set_error_handler(function ($no, $str, $file, $line) {
-    AppHelper::message("{$str} in {$file} on line {$line}", 'danger');
-});
-
 // 注册异常处理函数
 
 set_exception_handler(function ($e) {
     AppHelper::message($e->getMessage(), 'warning');
+});
+
+// 注册错误处理函数
+
+set_error_handler(function ($no, $str, $file, $line) {
+    AppHelper::message("{$str} in {$file} on line {$line}", 'danger');
 });

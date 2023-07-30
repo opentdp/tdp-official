@@ -15,7 +15,7 @@ class BasicModel
     public function __construct()
     {
         $this->site = App::cache('meta');
-        if (empty($this->site)) {
+        if ($this->name != 'runtime' && empty($this->site)) {
             AppHelper::message('site metadata loss', 'warning');
         }
     }

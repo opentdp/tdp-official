@@ -1,5 +1,5 @@
 .DS_Store
 
-tdpcms/
-runtime/
-node_modules/
+/tdpcms/
+/runtime/
+/node_modules/
