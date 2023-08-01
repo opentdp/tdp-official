@@ -8,9 +8,20 @@
 
 - 访问站点 `http://example.com`
 
+## 使用 docker 安装
+
+```shell
+docker run -dit --name tdpcms \
+   -v ~/tdpcms:/var/www/default/dataset \
+   -p 80:80 -p 443:443 \
+   rehiy/tdpcms
+```
+
 ## 数据目录
 
 数据目录为 `dataset`，其中包含了 `meta.ini` 配置文件和 `x.md` 作品文件
+
+> 更新数据目录文件后，需要访问 `example.com/?rt=/runtime/build` 更新缓存
 
 ### 配置文件
 
