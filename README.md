@@ -43,9 +43,9 @@ docker run -dit --name tdpcms \
 
 ```nginx
 location / {
-   if (!-e $request_filename){
-      rewrite ^/(.*)$ /index.php?rt=$1 last;
-   }
+    if (!-e $request_filename) {
+        rewrite ^(.*)$ /index.php?rt=$1 last;
+    }
 }
 ```
 
@@ -59,7 +59,7 @@ location / {
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
   
-    RewriteRule ^(.*)$ index.php?rt=$1 [QSA,PT,L]
+    RewriteRule ^(.*)$ /index.php?rt=$1 [QSA,PT,L]
 </IfModule>
 ```
 
