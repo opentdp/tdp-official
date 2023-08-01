@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+
+if [ ! -d /var/www/default/dataset ]; then
+    cp -av /var/www/dataset /var/www/default/dataset
+fi
+
+if [ ! -f /var/www/default/dataset/meta.ini ]; then
+    cp -av /var/www/dataset/* /var/www/default/dataset/
+fi
