@@ -3,7 +3,7 @@
 define('APP_ROOT', strtr(__DIR__, '\\', '/') . '/');
 require APP_ROOT . 'library/autoload.php';
 
-if (App::cache('meta', 86400) === null) {
+if (App::cache('meta', time() - 86400) === null) {
     App::obtain('RuntimeModel')->build();
 }
 
