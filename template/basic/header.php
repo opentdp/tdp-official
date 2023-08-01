@@ -4,6 +4,9 @@
 <!-- Title -->
 <title><?= implode(' - ', $this->title);  ?></title>
 
+<!-- Base URL -->
+<base href="<?= $this->site['baseurl']; ?>">
+
 <!-- SEO Tags -->
 <meta content="<?= $this->keywords ?: $this->site['keywords']; ?>" name="keywords">
 <meta content="<?= $this->description ?: $this->site['description']; ?>" name="description">
