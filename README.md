@@ -8,15 +8,6 @@
 
 - 访问站点 `http://example.com`
 
-## 使用 docker 安装
-
-```shell
-docker run -dit --name tdpcms \
-   -v ~/tdpcms:/var/www/default/dataset \
-   -p 80:80 -p 443:443 \
-   rehiy/tdpcms
-```
-
 ## 数据目录
 
 数据目录为 `dataset`，其中包含了 `meta.ini` 配置文件和 `x.md` 作品文件
@@ -36,6 +27,15 @@ docker run -dit --name tdpcms \
 - 首行 `#` 后面的内容为作品的标题，即 `subject` 字段
 
 - 首个 `ini` 代码块内容为作品的属性数据，格式参阅 [配置文件](#配置文件)
+
+## 使用 docker 安装
+
+```shell
+docker run -dit --name tdpcms \
+   -v ~/tdpcms:/var/www/default/dataset \
+   -p 80:80 -p 443:443 \
+   rehiy/tdpcms
+```
 
 ## 伪静态规则
 
