@@ -5,23 +5,25 @@
         </div>
         <?php if ($this->url) { ?>
             <div class="redirect">
-                <b>10</b> 秒后跳转到 <i><?= $this->url ?></i>
+                <b>9</b>秒后跳转到<a href="<?= $this->url ?>">新页面</a>
             </div>
-            <script>
-                (function() {
-                    var seconds = 10;
-                    var countdown = document.querySelector('.redirect b');
-                    var timer = function() {
-                        seconds--;
-                        countdown.innerHTML = seconds;
-                        if (seconds == 0) {
-                            clearInterval(interval);
-                            location.href = '<?= $this->url ?>';
-                        }
-                    };
-                    var interval = setInterval(timer, 1000);
-                })()
-            </script>
         <?php } ?>
     </div>
 </section>
+
+<?php if ($this->url) { ?>
+    <script type="text/javascript">
+        (function() {
+            var seconds = 9;
+            var countdown = document.querySelector('.redirect b');
+            var interval = setInterval(function() {
+                seconds--;
+                countdown.innerHTML = seconds;
+                if (seconds == 0) {
+                    clearInterval(interval);
+                    location.href = '<?= $this->url ?>';
+                }
+            }, 1000);
+        })()
+    </script>
+<?php } ?>
