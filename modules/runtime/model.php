@@ -7,6 +7,6 @@ class RuntimeModel extends BasicModel
     public function build()
     {
         App::obtain('AppRuntime')->build();
-        App::obtain('ErrorModel')->message('ok');
+        App::obtain('ErrorModel')->redirect('/')->message('缓存重建成功');
     }
 }
