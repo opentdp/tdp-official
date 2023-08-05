@@ -12,12 +12,12 @@
                 <li class="dropdown">
                     <a><span>开源</span><i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a href="https://github.com/open-tdp" target="_blank">Github 主页</a></li>
+                        <li><a href="https://github.com/opentdp" target="_blank">Github 主页</a></li>
                         <li class="dropdown">
                             <a href="#"><span>TDP Cloud</span><i class="bi bi-chevron-right"></i></a>
                             <ul>
                                 <li><a href="https://cloud.opentdp.org" target="_blank">演示站</a></li>
-                                <li><a href="https://github.com/open-tdp/tdp-cloud" target="_blank">源代码</a></li>
+                                <li><a href="https://github.com/opentdp/tdp-cloud" target="_blank">源代码</a></li>
                                 <li><a href="https://docs.opentdp.org/#/cloud/README" target="_blank">在线文档</a></li>
                             </ul>
                         </li>
@@ -25,7 +25,7 @@
                             <a href="#"><span>TDP Aiart</span><i class="bi bi-chevron-right"></i></a>
                             <ul>
                                 <li><a href="https://aiart.opentdp.org" target="_blank">演示站</a></li>
-                                <li><a href="https://github.com/open-tdp/tdp-aiart" target="_blank">源代码</a></li>
+                                <li><a href="https://github.com/opentdp/tdp-aiart" target="_blank">源代码</a></li>
                                 <li><a href="https://docs.opentdp.org/#/aiart/README" target="_blank">在线文档</a></li>
                             </ul>
                         </li>

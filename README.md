@@ -2,7 +2,7 @@
 
 ## 快速开始
 
-- 下载[预编译程序包](https://github.com/open-tdp/tdp-official/releases)
+- 下载[预编译程序包](https://github.com/opentdp/tdp-official/releases)
 
 - 解压后，上传到服务器
 

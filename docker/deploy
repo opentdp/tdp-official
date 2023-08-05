@@ -7,7 +7,7 @@ mv -f nginx.conf /etc/nginx/host.d/default.conf
 mv -f s2-tdpcms /etc/wkit.d/s2-tdpcms
 chmod +x /etc/wkit.d/s2-tdpcms
 
-releases_url=https://api.github.com/repos/open-tdp/tdp-official/releases/latest
+releases_url=https://api.github.com/repos/opentdp/tdp-official/releases/latest
 download_url=`wget -qO- $releases_url | grep releases/download | cut -f4 -d "\""`
 wget -qO- $download_url | tar xzvf - -C /var/www
 chown -R 2:2 /var/www/tdpcms
